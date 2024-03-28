@@ -61,7 +61,8 @@ sections:
           location: Philadelphia, USA
           date_start: '2023-06-01'
           date_end: ''
-          description: Distributed System Lab, advised by Prof. Vincent Liu
+          description: |
+              Distributed System Lab, advised by Prof. Vincent Liu
               Responsibilities include:
 
               * Practical Fairness Metric for Network Resource Allocation.
