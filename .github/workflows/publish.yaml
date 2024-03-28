@@ -34,7 +34,7 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@16361eb4acea8698b220b76c0d4e84e1fd22c61d
         with:
-          hugo-version: ${{ env.WC_HUGO_VERSION }}
+          hugo-version: hugo-version: '0.101.0'
           extended: true
       - uses: actions/cache@v4
         with:
