@@ -59,7 +59,7 @@ sections:
           company_url: ''
           company_logo: org-gc
           location: Philadelphia, USA
-          date_start: 'Jun 2023'
+          date_start: '2023-06-01'
           date_end: ''
           description: |2-
               Responsibilities include:
@@ -72,8 +72,8 @@ sections:
           company_url: ''
           company_logo: org-x
           location: Shanghai, China
-          date_start: 'Jan 2022'
-          date_end: 'Feb 2024'
+          date_start: '2022-01-01'
+          date_end: '2024-02-01'
           description: Taught electronic engineering and researched semiconductor physics.
     design:
       columns: '2'
