@@ -61,12 +61,10 @@ sections:
           location: Philadelphia, USA
           date_start: '2023-06-01'
           date_end: ''
-          description: |2-
+          description: Distributed System Lab, advised by Prof. Vincent Liu
               Responsibilities include:
 
-              * Analysing
-              * Modelling
-              * Deploying
+              * Practical Fairness Metric for Network Resource Allocation.
         - title: Undergraduate Student
           company: Shanghai Jiao Tong University
           company_url: ''
