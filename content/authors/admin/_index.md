@@ -11,21 +11,21 @@ last_name: Feng
 
 # Status emoji
 status:
-  icon: ☕️
+  icon: 
 
 # Is this the primary user of the site?
 superuser: true
 
 # Role/position/tagline
-role: Professor of Artificial Intelligence
+role: Bachelor Student in Information Engineering
 
 # Organizations/Affiliations to show in About widget
 organizations:
-  - name: Stanford University
-    url: https://www.stanford.edu/
+  - name: Shanghai Jiao Tong University
+    url: 
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include distributed robotics, mobile computing and programmable matter.
+bio: My research interests are broadly in systems and networking. 
 
 # Interests to show in About widget
 interests:
@@ -36,15 +36,12 @@ interests:
 # Education to show in About widget
 education:
   courses:
-    - course: PhD in Artificial Intelligence
-      institution: Stanford University
-      year: 2012
-    - course: MEng in Artificial Intelligence
-      institution: Massachusetts Institute of Technology
-      year: 2009
-    - course: BSc in Artificial Intelligence
-      institution: Massachusetts Institute of Technology
-      year: 2008
+    - course: B.E. in Information Engineering
+      institution: Shanghai Jiao Tong University
+      year: Sep. 2020 - Jun. 2024
+    - course: Semester Exchange in Computer Science
+      institution: EPFL (Ecole Polytechnique Fédérale de Lausanne)
+      year: Sep. 2023 ‑ Feb. 2024
 
 # Skills
 # For available icons, see: https://docs.hugoblox.com/getting-started/page-builder/#icons
@@ -120,5 +117,5 @@ social:
 highlight_name: true
 ---
 
-Chien Shiung Wu is a professor of artificial intelligence at the Stanford AI Lab. Her research interests include distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+My research interests are broadly in systems and networking. I am interested in identifying where theory and practice mismatch, and bridging the gap through theoretical concepts and practical solutions. Recently, my interest has been in building networked systems for measurement.
 {style="text-align: justify;"}
