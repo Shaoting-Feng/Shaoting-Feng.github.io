@@ -2,8 +2,8 @@
 # Display name
 title: 冯绍庭
 
-[comment]: <> (# Name pronunciation (optional))
-[comment]: <> (name_pronunciation: Chien Shiung Wu)
+[//]: # "# Name pronunciation (optional)"
+[//]: # "name_pronunciation: Chien Shiung Wu)"
 
 # Full name (for SEO)
 first_name: Shiung Wu
