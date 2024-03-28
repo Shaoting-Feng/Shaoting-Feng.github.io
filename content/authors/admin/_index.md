@@ -56,6 +56,9 @@ social:
     label: Follow me on Twitter
     display:
       header: true
+  - icon: instagram
+    icon_pack: fab
+    link: https://www.instagram.com/shaoting_feng/
   - icon: graduation-cap # Alternatively, use `google-scholar` icon from `ai` icon pack
     icon_pack: fas
     link: 
@@ -68,9 +71,6 @@ social:
   - icon: cv
     icon_pack: ai
     link: uploads/resume.pdf
-  - icon: instagram
-    icon_pack: fab
-    link: https://www.instagram.com/shaoting_feng/
 
 # Highlight the author in author lists? (true/false)
 highlight_name: true
