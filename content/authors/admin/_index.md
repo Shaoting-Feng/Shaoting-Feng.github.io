@@ -2,8 +2,8 @@
 # Display name
 title: 冯绍庭
 
-[//]: # "# Name pronunciation (optional)"
-[//]: # "name_pronunciation: Chien Shiung Wu)"
+# Name pronunciation (optional)
+name_pronunciation: 
 
 # Full name (for SEO)
 first_name: Shaoting
