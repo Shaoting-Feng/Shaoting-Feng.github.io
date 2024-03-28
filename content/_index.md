@@ -63,9 +63,9 @@ sections:
           date_end: ''
           description: |
               Distributed System Lab, advised by Prof. Vincent Liu
-              Responsibilities include:
 
               * Practical Fairness Metric for Network Resource Allocation.
+    
         - title: Undergraduate Student
           company: Shanghai Jiao Tong University
           company_url: ''
@@ -73,7 +73,24 @@ sections:
           location: Shanghai, China
           date_start: '2022-01-01'
           date_end: '2024-02-01'
-          description: Taught electronic engineering and researched semiconductor physics.
+          description: |
+              Advanced Network Lab, advised by Prof. Fan Wu
+
+              * GIPUT: UAV Trajectory Algorithm for Maximum Photo Coverage Efficiency by Computational Geometry and Deep Reinforcement Learning.
+              * Grouping Algorithms for Optimal Configuration of Virtual Links in AFDX.
+
+        - title: Undergraduate Student
+          company: Shanghai Jiao Tong University
+          company_url: ''
+          company_logo: org-x
+          location: Shanghai, China
+          date_start: '2021-06-01'
+          date_end: '2021-08-01'
+          description: |
+              Bio‑Circuits and Systems Lab, advised by Prof. Yan Liu
+
+              * Design PCB layout for brain‑computer interface, perform microcontroller programming and wireless module programming.
+              * Explore the relationship between waveform characteristics and electrode distance using analog‑to‑digital converters.
     design:
       columns: '2'
   - block: accomplishments
