@@ -1,12 +1,15 @@
 ---
-title: 'An example conference paper'
+title: 'GIPUT: Maximizing Photo Coverage Efficiency for UAV Trajectory'
 
 # Authors
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here
 # and it will be replaced with their full name and linked to their profile.
 authors:
   - admin
-  - Robert Ford
+  - Qinya Li
+  - Yaodong Yang
+  - Fan Wu
+  - Guihai Chen
 
 # Author notes (optional)
 author_notes:
@@ -28,7 +31,7 @@ publication_types: ['paper-conference']
 publication: In *Hugo Blox Builder Conference*
 publication_short: In *ICW*
 
-abstract: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.
+abstract: Unmanned Aerial Vehicles (UAVs) used for photo coverage require trajectories that differ significantly from traditional solutions. Traditional trajectories often treat objects as mere points, neglecting their geometric properties. In contrast, UAV trajectories must consider varying camera angles and viewpoints to capture comprehensive images. In this study, we propose a novel UAV trajectory algorithm that maximizes photo coverage efficiency by integrating computational geometry and deep reinforcement learning. Our approach accurately models objects as realistic shapes, enabling precise computation of UAV photo coverage. This model empowers the UAV to learn optimal trajectories considering multiple factors, including photo coverage, energy consumption, and bandwidth utilization. Extensive experiments were conducted to evaluate our proposed model across diverse scenarios. The results demonstrate a significant enhancement in UAV trajectory efficiency for aerial photo coverage compared to existing state-of-the-art approaches. This improvement facilitates a more effective image capture process, leading to broader coverage and reduced energy and bandwidth consumption.
 
 # Summary. An optional shortened abstract.
 summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum.
