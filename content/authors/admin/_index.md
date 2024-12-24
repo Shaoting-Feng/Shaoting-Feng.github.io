@@ -36,13 +36,13 @@ interests:
 education:
   courses:
     - course: Pre-Doc MS in Computer Science
-      institution: University of Chicago
+      institution: University of Chicago | 
       year: Sep. 2024 - Dec. 2025 (expected)
     - course: Semester Exchange in Computer Science
-      institution: EPFL (Ecole Polytechnique Fédérale de Lausanne)
+      institution: EPFL (Ecole Polytechnique Fédérale de Lausanne) | 
       year: Sep. 2023 ‑ Feb. 2024
     - course: B.E. in Information Engineering
-      institution: Shanghai Jiao Tong University
+      institution: Shanghai Jiao Tong University | 
       year: Sep. 2020 - Jun. 2024
 
 # Social/Academic Networking
