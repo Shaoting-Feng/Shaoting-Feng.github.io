@@ -35,18 +35,21 @@ interests:
 # Education to show in About widget
 education:
   courses:
-    - course: |
+    - course: 
         Pre-Doc MS in Computer Science
+        
         Sep. 2024 - Dec. 2025 (expected)
       institution: University of Chicago
       year: 
-    - course: |
+    - course: 
         Semester Exchange in Computer Science
+        
         Sep. 2023 ‑ Feb. 2024
       institution: EPFL (Ecole Polytechnique Fédérale de Lausanne)
       year: 
-    - course: |
+    - course: 
         B.E. in Information Engineering
+        
         Sep. 2020 - Jun. 2024
       institution: Shanghai Jiao Tong University
       year: 
