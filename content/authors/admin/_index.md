@@ -59,12 +59,12 @@ social:
     label: Follow me on Twitter
     display:
       header: true
-  - icon: instagram
-    icon_pack: fab
-    link: https://www.instagram.com/shaoting_feng/
-  - icon: graduation-cap # Alternatively, use `google-scholar` icon from `ai` icon pack
-    icon_pack: fas
-    link: 
+#   - icon: instagram
+#     icon_pack: fab
+#     link: https://www.instagram.com/shaoting_feng/
+  - icon: google-scholar # Alternatively, use `google-scholar` icon from `ai` icon pack
+    icon_pack: ai
+    link: https://scholar.google.com/citations?user=HJ3InCAAAAAJ&hl=en&oi=sra
   - icon: github
     icon_pack: fab
     link: https://github.com/Shaoting-Feng
@@ -79,5 +79,9 @@ social:
 highlight_name: true
 ---
 
-My research interests are broadly in systems and networking. I am interested in identifying where theory and practice mismatch, and bridging the gap through theoretical concepts and practical solutions. Recently, my interest has been in building networked systems for measurement.
+My research interests lie in systems for large language models (LLMs) and computer networking. I am passionate about applying mathematics to system design, building innovative solutions to achieve performance improvements that may even seem impossible.
+
+I am fortunate to be advised by [Prof. Junchen Jiang](https://people.cs.uchicago.edu/~junchenj/) at the University of Chicago. Previously, I had the privilege of working with [Dr. Liangcheng Yu](https://liangchengyu.com/) and [Prof. Vincent Liu](https://vincen.tl/) at UPenn.
+
+I am seeking PhD positions starting in Fall 2026. Please feel free to reach out via email if you see a fit!
 {style="text-align: justify;"}
