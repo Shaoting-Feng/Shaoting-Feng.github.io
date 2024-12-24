@@ -17,30 +17,33 @@ status:
 superuser: true
 
 # Role/position/tagline
-role: Bachelor Student in Information Engineering
+role: Pre-Doc Master in Computer Science
 
 # Organizations/Affiliations to show in About widget
 organizations:
-  - name: Shanghai Jiao Tong University
+  - name: University of Chicago
     url: 
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests are broadly in systems and networking. 
+bio: My research interests are in systems for LLM and computer networking. 
 
 # Interests to show in About widget
 interests:
-  - Computer networks
-  - Measurement & perf. analysis
+  - Systems for LLM
+  - Computer networking
 
 # Education to show in About widget
 education:
   courses:
-    - course: B.E. in Information Engineering
-      institution: Shanghai Jiao Tong University
-      year: Sep. 2020 - Jun. 2024
+    - course: Pre-Doc MS in Computer Science
+      institution: University of Chicago
+      year: Sep. 2024 - Dec. 2025 (expected)
     - course: Semester Exchange in Computer Science
       institution: EPFL (Ecole Polytechnique Fédérale de Lausanne)
       year: Sep. 2023 ‑ Feb. 2024
+    - course: B.E. in Information Engineering
+      institution: Shanghai Jiao Tong University
+      year: Sep. 2020 - Jun. 2024
 
 # Social/Academic Networking
 # For available icons, see: https://docs.hugoblox.com/getting-started/page-builder/#icons
