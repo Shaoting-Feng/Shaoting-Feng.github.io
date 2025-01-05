@@ -12,9 +12,9 @@ const SideBar = () => (
         <img src={`${PUBLIC_URL}/images/me.jpg`} alt="" />
       </Link>
       <header>
-        <h2>Michael D&apos;Angelo</h2>
+        <h2>Shaoting Feng</h2>
         <p>
-          <a href="mailto:michael@mldangelo.com">michael@mldangelo.com</a>
+          <a href="mailto:shaotingf@uchicago.edu">shaotingf@uchicago.edu</a>
         </p>
       </header>
     </section>
@@ -22,13 +22,7 @@ const SideBar = () => (
     <section className="blurb">
       <h2>About</h2>
       <p>
-        Hi, I&apos;m Michael. I am a{' '}
-        <a href="https://icme.stanford.edu/">Stanford ICME</a> graduate, YC
-        alumnus, and the co-founder and CTO of{' '}
-        <a href="https://promptfoo.dev">Promptfoo</a>. Previously, I
-        was VP of Engineering at <a href="https://usesmileid.com">SmileID</a>,
-        co-founder and CTO of <a href="https://arthena.com">Arthena</a>, and
-        co-founded <a href="https://matroid.com">Matroid</a>.
+        Hi, I&apos;m Shaoting. My research interests lie in systems for large language models (LLMs) and computer networking. I am fortunate to be advised by Prof.{' '}<a href="https://people.cs.uchicago.edu/~junchenj/">Junchen Jiang</a> at the University of Chicago. I also worked closely with Dr.{' '}<a href="https://liangchengyu.com/">Liangcheng Yu</a>.
       </p>
       <ul className="actions">
         <li>
@@ -37,8 +31,8 @@ const SideBar = () => (
               Learn More
             </Link>
           ) : (
-            <Link to="/about" className="button">
-              About Me
+            <Link to="/projects" className="button">
+              Selected Projects
             </Link>
           )}
         </li>

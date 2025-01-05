@@ -1,15 +1,21 @@
 const degrees = [
   {
-    school: 'Stanford University',
-    degree: 'M.S. Computational and Mathematical Engineering',
-    link: 'https://stanford.edu',
-    year: 2016,
+    school: 'University of Chicago',
+    degree: 'Pre-Doc MS in Computer Science',
+    link: 'https://www.uchicago.edu/en',
+    year: 'Sep. 2024 - Dec. 2025 (expected)',
   },
   {
-    school: 'University at Buffalo',
-    degree: 'B.S. Electrical Engineering, Computer Engineering',
-    link: 'https://buffalo.edu',
-    year: 2012,
+    school: 'EPFL (Ecole Polytechnique Fédérale de Lausanne)',
+    degree: 'Semester Exchange in Computer Science',
+    link: 'https://www.epfl.ch/en/',
+    year: 'Sep. 2023 - Feb. 2024',
+  },
+  {
+    school: 'Shanghai Jiao Tong University',
+    degree: 'B.E. in Information Engineering',
+    link: 'https://en.sjtu.edu.cn/',
+    year: 'Sep. 2020 - Jun. 2024',
   },
 ];
 
