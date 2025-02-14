@@ -1,7 +1,7 @@
 const routes = [
   {
     index: true,
-    label: "Michael D'Angelo",
+    label: 'Shaoting Feng',
     path: '/',
   },
   {
@@ -16,14 +16,14 @@ const routes = [
     label: 'Projects',
     path: '/projects',
   },
-  {
-    label: 'Stats',
-    path: '/stats',
-  },
-  {
-    label: 'Contact',
-    path: '/contact',
-  },
+  // {
+  //   label: 'Stats',
+  //   path: '/stats',
+  // },
+  // {
+  //   label: 'Contact',
+  //   path: '/contact',
+  // },
 ];
 
 export default routes;
