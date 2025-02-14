@@ -15,7 +15,7 @@ const work = [
   {
     name: 'Univerisity of Chicago',
     position: 'Research Assistant',
-    url: 'https://promptfoo.dev',
+    url: 'https://uchi-jcl.github.io/group-website/',
     startDate: '2024-09',
     summary: 'Advised by Prof. Junchen Jiang',
     highlights: [
