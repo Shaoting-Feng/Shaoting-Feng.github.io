@@ -22,7 +22,7 @@ const SideBar = () => (
     <section className="blurb">
       <h2>About</h2>
       <p>
-        Hi, I&apos;m Shaoting. My research interests lie in systems for large language models (LLMs) and computer networking. I am fortunate to be advised by Prof.{' '}<a href="https://people.cs.uchicago.edu/~junchenj/">Junchen Jiang</a> at the University of Chicago. I also worked closely with Dr.{' '}<a href="https://liangchengyu.com/">Liangcheng Yu</a>.
+        Hi, I&apos;m Shaoting. My research interests lie in systems for large language models (LLMs) and computer networking. I am fortunate to be advised by Prof.{' '}<a href="https://people.cs.uchicago.edu/~junchenj/">Junchen Jiang</a> at the University of Chicago.
       </p>
       <ul className="actions">
         <li>

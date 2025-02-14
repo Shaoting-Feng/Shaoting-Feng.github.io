@@ -26,7 +26,7 @@ const App = () => (
     <Suspense fallback={<Main />}>
       <Routes>
         {/* <Route path="/" element={<Index />} /> */}
-        <Route path="/" element={<Navigate to="/resume" replace />} />
+        <Route path="/" element={<Navigate to="/about" replace />} />
         <Route path="/about" element={<About />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/stats" element={<Stats />} />

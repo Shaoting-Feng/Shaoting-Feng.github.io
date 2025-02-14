@@ -11,6 +11,7 @@ module.exports = {
   parser: '@babel/eslint-parser',
   plugins: ['react'],
   rules: {
+    'max-len': ['error', 500],
     'jsx-a11y/anchor-is-valid': [
       'error',
       {
