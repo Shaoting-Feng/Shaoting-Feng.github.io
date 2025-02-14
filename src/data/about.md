@@ -2,7 +2,7 @@
 
 I am a Pre-Doc MS student in the Department of Computer Science at the University of Chicago, advised by **Prof. Junchen Jiang**. My research interests lie in systems for large language models (LLMs) and computer networking. Previously, I earned my B.S. in Information Engineering from Shanghai Jiao Tong University.
 
-# Projects
+# Project
 
 I’m currently working on the following open-source projects:
 
