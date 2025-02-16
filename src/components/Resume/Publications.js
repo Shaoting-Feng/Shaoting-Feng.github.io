@@ -23,7 +23,7 @@ Publications.propTypes = {
       people: PropTypes.string,
       code_url: PropTypes.string,
       slides_url: PropTypes.string,
-      pdf_url: PropTypes.arrayOf(PropTypes.string),
+      pdf_url: PropTypes.string,
       video_url: PropTypes.string,
     }),
   ),

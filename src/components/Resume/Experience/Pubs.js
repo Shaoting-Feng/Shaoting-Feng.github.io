@@ -27,6 +27,7 @@ const Pubs = ({
         .filter(Boolean)
         .map((item, index, arr) => (index < arr.length - 1 ? [item, ' | '] : item))}
     </p>
+    <br />
   </article>
 );
 
@@ -37,7 +38,7 @@ Pubs.propTypes = {
     people: PropTypes.string,
     codeUrl: PropTypes.string,
     slidesUrl: PropTypes.string,
-    pdfUrl: PropTypes.arrayOf(PropTypes.string),
+    pdfUrl: PropTypes.string,
     videoUrl: PropTypes.string,
   }).isRequired,
 };
