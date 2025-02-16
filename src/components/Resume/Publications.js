@@ -5,7 +5,7 @@ import Pubs from './Experience/Pubs';
 
 const Publications = ({ data }) => (
   <div className="experience">
-    <div className="link-to" id="experience" />
+    <div className="link-to" id="publications" />
     <div className="title">
       <h3>Publications</h3>
     </div>
