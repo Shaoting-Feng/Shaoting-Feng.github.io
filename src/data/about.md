@@ -1,6 +1,6 @@
 # Intro
 
-I am a Pre-Doc MS student in Computer Science at the University of Chicago, advised by Prof. **[Junchen Jiang](https://people.cs.uchicago.edu/~junchenj/)**. My research interests lie in systems for large language models (LLMs) and computer networking. Previously, I earned my B.E. in Information Engineering from Shanghai Jiao Tong University.
+I am a Pre-Doc MS student in Computer Science at the University of Chicago, advised by Prof. [**Junchen Jiang**](https://people.cs.uchicago.edu/~junchenj/). My research focuses on systems for large language models (LLMs) and computer networking. Previously, I was a visiting student at the University of Pennsylvania, where I worked closely with Dr. [Liangcheng Yu](https://liangchengyu.com/). I earned my B.E. in Information Engineering from Shanghai Jiao Tong University.
 
 &nbsp;
 
