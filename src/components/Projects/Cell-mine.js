@@ -22,9 +22,16 @@ const Cell = ({ data }) => {
           <h3>
             <a href={data.link}>{data.title}</a>
           </h3>
-          <time className="published">
-            {dayjs(data.date).format('MMMM, YYYY')}
-          </time>
+          {data.subtitle && (
+            <h3 className="published">
+              <a href={data.link}>{data.subtitle}</a>
+            </h3>
+          )}
+          {data.date && (
+            <time className="published">
+              {dayjs(data.date).format('MMMM, YYYY')}
+            </time>
+          )}
         </header>
         <div
           className="image-container"
@@ -75,9 +82,10 @@ const Cell = ({ data }) => {
 Cell.propTypes = {
   data: PropTypes.shape({
     title: PropTypes.string.isRequired,
+    subtitle: PropTypes.string,
     link: PropTypes.string,
     images: PropTypes.arrayOf(PropTypes.string).isRequired,
-    date: PropTypes.string.isRequired,
+    date: PropTypes.string,
     desc: PropTypes.string.isRequired,
   }).isRequired,
 };

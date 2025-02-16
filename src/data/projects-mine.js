@@ -2,7 +2,6 @@
 const data = [
   {
     title: 'Network MAC Layer Implementation for LoRa Development Board',
-    subtitle: 'Implemented the MAC layer for a LoRa development board using the C programming language.',
     link: 'https://github.com/Shaoting-Feng/LoRa-MAC-Layer/tree/mastermain',
     images: ['/images/projects/mac-layer.png', '/images/projects/Transmitter.png', '/images/projects/Receiver.png'],
     date: '2023-06',

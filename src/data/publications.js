@@ -1,20 +1,13 @@
 // TODO Add a couple lines about each project
 const data = [
   {
-    title: 'vLLM production stack',
-    link: 'https://github.com/vllm-project/production-stack',
-    images: ['/images/projects/prodstack-large.PNG'],
-    date: '2025-02',
+    title: 'GIPUT: Maximizing Photo Coverage Efficiency for UAV Trajectory',
+    subtitle: 'APWeb‑WAIM’24',
+    link: 'https://link.springer.com/chapter/10.1007/978-981-97-7232-2_26',
+    images: ['/images/projects/giput1.png', '/images/projects/giput2.png', '/images/projects/giput3.png', '/images/projects/giput4.png'],
+    // date: '2024-08',
     desc:
-      'Scale from single vLLM instance to distributed vLLM deployment without changing any application code.',
-  },
-  {
-    title: 'LMCache',
-    link: 'https://lmcache.ai/',
-    images: ['/images/projects/lmcache1.gif', '/images/projects/lmcache2.gif', '/images/projects/lmcache2.png', '/images/projects/lmcache1.png'],
-    date: '2024-09',
-    desc:
-      'The first open-source Knowledge Delivery Network (KDN) that accelerates LLM applications up to 8x faster, at 8x lower cost.',
+      'GIPUT models objects with realistic shapes, enabling UAVs to learn optimal trajectories while considering photo coverage, energy consumption, and bandwidth utilization. It achieves twice the efficiency of state-of-the-art algorithms.',
   },
   // {
   //   title: 'Space Potato',
