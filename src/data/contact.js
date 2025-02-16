@@ -6,6 +6,7 @@ import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons/faLinkedinIn';
 import { faXTwitter } from '@fortawesome/free-brands-svg-icons/faXTwitter';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons/faEnvelope';
 import { faGoogleScholar } from '@fortawesome/free-brands-svg-icons/faGoogleScholar';
+import { faFilePdf } from '@fortawesome/free-regular-svg-icons/faFilePdf';
 // See https://fontawesome.com/icons?d=gallery&s=brands,regular&m=free
 // to add other icons.
 
@@ -44,6 +45,11 @@ const data = [
     link: 'https://scholar.google.com/citations?user=HJ3InCAAAAAJ&hl=en',
     label: 'GoogleScholar',
     icon: faGoogleScholar,
+  },
+  {
+    link: 'https://drive.google.com/file/d/1H6VZuucOD6f_DG0Uwt4L8BUh8LfwuJ_T/view?usp=drive_link',
+    label: 'CV',
+    icon: faFilePdf,
   },
   {
     link: 'mailto:shaotingf@uchicago.edu',
