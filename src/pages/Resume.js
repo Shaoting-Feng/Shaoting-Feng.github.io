@@ -5,19 +5,22 @@ import Main from '../layouts/Main';
 
 import Education from '../components/Resume/Education';
 import Experience from '../components/Resume/Experience';
+import Publications from '../components/Resume/Publications';
 // import Skills from '../components/Resume/Skills';
 // import Courses from '../components/Resume/Courses';
 // import References from '../components/Resume/References';
-
 // import courses from '../data/resume/courses';
+// import { skills, categories } from '../data/resume/skills';
+
 import degrees from '../data/resume/degrees';
 import work from '../data/resume/work';
-// import { skills, categories } from '../data/resume/skills';
+import pubs from '../data/resume/pubs';
 
 // NOTE: sections are displayed in order defined.
 const sections = {
   Education: () => <Education data={degrees} />,
   Experience: () => <Experience data={work} />,
+  Publications: () => <Publications data={pubs} />,
   // Skills: () => <Skills skills={skills} categories={categories} />,
   // Courses: () => <Courses data={courses} />,
   // References: () => <References />,
