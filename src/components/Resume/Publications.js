@@ -7,7 +7,7 @@ const Publications = ({ data }) => (
   <div className="experience">
     <div className="link-to" id="experience" />
     <div className="title">
-      <h3>Pubications</h3>
+      <h3>Publications</h3>
     </div>
     {data.map((job) => (
       <Pubs data={job} key={`${job.name}-${job.position}`} />
