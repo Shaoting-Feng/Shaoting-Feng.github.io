@@ -13,9 +13,7 @@ const Awds = ({
     <p>
       {place} · {year}
     </p>
-    <p>
-      {description}
-    </p>
+    {description && <p>{description}</p>}
     <br />
   </article>
 );

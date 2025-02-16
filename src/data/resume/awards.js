@@ -9,6 +9,11 @@
  */
 const awards = [
   {
+    name: 'MPCS Merit-Based Scholarship',
+    year: 'Sep 2024',
+    place: 'Issued by UChicago Pre-Doctoral MS Program',
+  },
+  {
     name: 'Dennis C.C.Chan Scholarship',
     year: 'Dec 2023',
     place: 'Issued by Shanghai Jiao Tong University',
