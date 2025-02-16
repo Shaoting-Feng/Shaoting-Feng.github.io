@@ -4,7 +4,7 @@ const data = [
     title: 'vLLM production stack',
     subtitle: 'Scale from single vLLM instance to distributed vLLM deployment without changing any application code.',
     link: 'https://github.com/vllm-project/production-stack',
-    image: '/images/projects/prodstack-large.PNG',
+    images: ['/images/projects/prodstack-large.PNG'],
     date: '2025-02',
     desc:
       'Scale from single vLLM instance to distributed vLLM deployment without changing any application code.',
@@ -12,8 +12,8 @@ const data = [
   {
     title: 'LMCache',
     subtitle: 'The first open-source Knowledge Delivery Network (KDN) that accelerates LLM applications up to 8x faster, at 8x lower cost.',
-    link: 'https://github.com/LMCache/LMCache',
-    image: '/images/projects/lmcache-large.PNG',
+    link: 'https://lmcache.ai/',
+    images: ['/images/projects/lmcache1.gif', '/images/projects/lmcache2.gif', '/images/projects/lmcache2.png', '/images/projects/lmcache1.png'],
     date: '2024-09',
     desc:
       'The first open-source Knowledge Delivery Network (KDN) that accelerates LLM applications up to 8x faster, at 8x lower cost.',

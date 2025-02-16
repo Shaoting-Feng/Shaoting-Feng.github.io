@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 
 import Main from '../layouts/Main';
 
-import Cell from '../components/Projects/Cell';
+import CellMine from '../components/Projects/Cell-mine';
 import data from '../data/projects';
+import myData from '../data/projects-mine';
 
 const Projects = () => (
   <Main title="Projects" description="Learn about Shaoting Feng's projects.">
@@ -14,11 +15,15 @@ const Projects = () => (
           <h2>
             <Link to="/projects">Projects</Link>
           </h2>
-          <p>Open-source projects that I&apos;m maintaining</p>
         </div>
       </header>
+      <h3>Open-source projects that I&apos;m maintaining:</h3>
       {data.map((project) => (
-        <Cell data={project} key={project.title} />
+        <CellMine data={project} key={project.title} />
+      ))}
+      <h3>Past Projects:</h3>
+      {myData.map((project) => (
+        <CellMine data={project} key={project.title} />
       ))}
     </article>
   </Main>
