@@ -37,7 +37,21 @@ const Job = ({
     {highlights ? (
       <ul className="points">
         {highlights.map((highlight) => (
-          <li key={highlight}>{highlight}</li>
+          <li>
+            <Markdown
+              options={{
+                overrides: {
+                  p: {
+                    props: {
+                      className: 'highlight-text',
+                    },
+                  },
+                },
+              }}
+            >
+              {highlight.text}
+            </Markdown>
+          </li>
         ))}
       </ul>
     ) : null}

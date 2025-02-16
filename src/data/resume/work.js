@@ -17,10 +17,10 @@ const work = [
     position: 'Research Assistant',
     url: 'https://uchi-jcl.github.io/group-website/',
     startDate: '2024-09',
-    summary: 'Advised by Prof. Junchen Jiang',
+    summary: 'Advised by Prof. [**Junchen Jiang**](https://people.cs.uchicago.edu/~junchenj/)',
     highlights: [
-      'Working on dynamic KV Cache compression for file systems',
-      'Working on open source projects on systems for LLMs',
+      { text: 'Working on dynamic KV Cache compression for shared storage systems.' },
+      { text: 'Maintainers of open source projects on systems for LLMs: [**vllm production stack**](https://github.com/vllm-project/production-stack) and [**LMCache**](https://github.com/LMCache/LMCache).' },
     ],
   },
   {
@@ -29,13 +29,11 @@ const work = [
     url: 'https://dsl.cis.upenn.edu/',
     startDate: '2023-06',
     endDate: '2023-09',
-    summary: 'Advised by Prof. Vincent Liu',
+    summary: 'Advised by Prof. [**Vincent Liu**](https://vincen.tl/) and Dr. [**Liangcheng Yu**](https://liangchengyu.com/)',
     highlights: [
-      'Designed practical fairness metric for network resource allocation.',
-    //   'Re-architected engineering hiring and onboarding processes. Recruited several strong engineers.',
-    //   'Reorged engineering teams to focus on product delivery. Created a new team to focus on ML infrastructure.',
-    //   'Lead re-design of internal APIs for inference. Built new computer vision pipelines for industry leading certifications (NIST/iBeta liveness).',
-    //   'Pitched, designed, developed, deployed, and maintain a fraud detection product based on 1-N facial recognition using embeddings and vector search.',
+      { text: 'Developed a **practical fairness metric** that quantifies packet-level deviations from user specific baselines.' },
+      { text: 'Implemented and validated the proposed metric using the **ns-3 simulator**, demonstrating its effectiveness in dynamic **data center network** scenarios.' },
+      { text: 'Check out here: [slides](https://docs.google.com/presentation/d/1BkVvrqSuPSJwAKRlfyBuOneNzDaOKV6v/edit?usp=drive_link&ouid=117429613749838892485&rtpof=true&sd=true) and [pdf (thesis in Chinese)](https://drive.google.com/file/d/12yxXhvKhErFywlyVtDx2QBIHNTfNWf4k/view?usp=drive_link).' },
     ],
   },
   // {
