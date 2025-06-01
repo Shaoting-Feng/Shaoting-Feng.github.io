@@ -21,8 +21,8 @@ import awards from '../data/resume/awards';
 // NOTE: sections are displayed in order defined.
 const sections = {
   Education: () => <Education data={degrees} />,
-  Experience: () => <Experience data={work} />,
   Publications: () => <Publications data={pubs} />,
+  Experience: () => <Experience data={work} />,
   Awards: () => <Awards data={awards} />,
   // Skills: () => <Skills skills={skills} categories={categories} />,
   // Courses: () => <Courses data={courses} />,
