@@ -40,17 +40,39 @@ const Cell = ({ data }) => {
             flexDirection: 'column',
             alignItems: 'center',
             maxWidth: '100%',
+            height: '15em',
           }}
         >
-          <a href={data.link} className="image">
-            <img
-              src={`${process.env.PUBLIC_URL}${data.images[currentImage]}`}
-              alt={data.title}
-              style={{ width: '100%', height: 'auto' }}
-            />
-          </a>
+          <div
+            style={{
+              flex: 1,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '100%',
+            }}
+          >
+            <a href={data.link} className="image">
+              <img
+                src={`${process.env.PUBLIC_URL}${data.images[currentImage]}`}
+                alt={data.title}
+                style={{
+                  maxHeight: '12em',
+                  maxWidth: '95%',
+                  width: 'auto',
+                  height: 'auto',
+                  display: 'block',
+                  margin: '0 auto',
+                }}
+              />
+            </a>
+          </div>
           <div
             className="image-navigation"
+            style={{
+              marginTop: 'auto',
+              display: 'flex',
+            }}
           >
             {/* Previous Button */}
             <button

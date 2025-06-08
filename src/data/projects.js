@@ -1,6 +1,14 @@
 // TODO Add a couple lines about each project
 const data = [
   {
+    title: 'LMCache',
+    link: 'https://lmcache.ai/',
+    images: ['/images/projects/lmcache1.gif', '/images/projects/lmcache2.gif', '/images/projects/lmcache2.png', '/images/projects/lmcache1.png'],
+    date: '2024-09',
+    desc:
+      'The first open-source Knowledge Delivery Network (KDN) that accelerates LLM applications up to 8x faster, at 8x lower cost.',
+  },
+  {
     title: 'vLLM production stack',
     link: 'https://github.com/vllm-project/production-stack',
     images: ['/images/projects/prodstack-large.PNG'],
@@ -9,12 +17,12 @@ const data = [
       'Scale from single vLLM instance to distributed vLLM deployment without changing any application code.',
   },
   {
-    title: 'LMCache',
-    link: 'https://lmcache.ai/',
-    images: ['/images/projects/lmcache1.gif', '/images/projects/lmcache2.gif', '/images/projects/lmcache2.png', '/images/projects/lmcache1.png'],
-    date: '2024-09',
+    title: 'vLLM production stack',
+    link: 'https://github.com/vllm-project/production-stack',
+    images: ['/images/projects/prodstack-large.PNG'],
+    date: '2025-02',
     desc:
-      'The first open-source Knowledge Delivery Network (KDN) that accelerates LLM applications up to 8x faster, at 8x lower cost.',
+      'Scale from single vLLM instance to distributed vLLM deployment without changing any application code.',
   },
   // {
   //   title: 'Space Potato',

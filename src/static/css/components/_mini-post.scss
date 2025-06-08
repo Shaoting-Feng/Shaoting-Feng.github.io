@@ -1,4 +1,18 @@
+.cells-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 _size(element-margin);
+}
+
+.nav-button {
+  width: 15em;
+  height: 3em;
+  line-height: 3em;
+  text-align: center;
+}
+
 .cell-container {
+  flex: 0 0 50%;
   position: relative;
 
   .description {
@@ -36,8 +50,7 @@
   @include vendor("flex-direction", "column");
   background: _palette(bg);
   border: solid 1px _palette(border);
-  margin: 0 0 _size(element-margin);
-
+  margin: 0;
   .image {
     overflow: hidden;
     width: 100%;

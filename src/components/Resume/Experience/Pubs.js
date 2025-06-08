@@ -4,7 +4,7 @@ import Markdown from 'markdown-to-jsx';
 
 const Pubs = ({
   data: {
-    name, pub, people, codeUrl, slidesUrl, pdfUrl, videoUrl,
+    name, pub, people, codeUrl, slidesUrl, pdfUrl, videoUrl, posterUrl,
   },
 }) => (
   <article className="pubs-container">
@@ -23,6 +23,7 @@ const Pubs = ({
         codeUrl && <a key="code" href={codeUrl}>codes</a>,
         slidesUrl && <a key="slides" href={slidesUrl}>slides</a>,
         videoUrl && <a key="video" href={videoUrl}>video</a>,
+        posterUrl && <a key="poster" href={posterUrl}>poster</a>,
       ]
         .filter(Boolean)
         .map((item, index, arr) => (index < arr.length - 1 ? [item, ' | '] : item))}
@@ -40,6 +41,7 @@ Pubs.propTypes = {
     slidesUrl: PropTypes.string,
     pdfUrl: PropTypes.string,
     videoUrl: PropTypes.string,
+    posterUrl: PropTypes.string,
   }).isRequired,
 };
 

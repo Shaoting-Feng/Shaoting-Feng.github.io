@@ -10,31 +10,37 @@ import myData from '../data/projects-mine';
 import pubData from '../data/publications';
 
 const sections = {
+  Research: () => (
+    <>
+      <div className="link-to" id="research" />
+      <h3>Publications:</h3>
+      <div className="cells-list">
+        {pubData.map((project) => (
+          <CellMine data={project} key={project.title} />
+        ))}
+      </div>
+    </>
+  ),
   'Open-Source': () => (
     <>
       <div className="link-to" id="open-source" />
       <h3>Open-source projects that I&apos;m maintaining:</h3>
-      {data.map((project) => (
-        <CellMine data={project} key={project.title} />
-      ))}
+      <div className="cells-list">
+        {data.map((project) => (
+          <CellMine data={project} key={project.title} />
+        ))}
+      </div>
     </>
   ),
   Projects: () => (
     <>
       <div className="link-to" id="projects" />
       <h3>Past Projects:</h3>
-      {myData.map((project) => (
-        <CellMine data={project} key={project.title} />
-      ))}
-    </>
-  ),
-  Research: () => (
-    <>
-      <div className="link-to" id="research" />
-      <h3>Publications:</h3>
-      {pubData.map((project) => (
-        <CellMine data={project} key={project.title} />
-      ))}
+      <div className="cells-list">
+        {myData.map((project) => (
+          <CellMine data={project} key={project.title} />
+        ))}
+      </div>
     </>
   ),
 };

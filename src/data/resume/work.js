@@ -20,7 +20,17 @@ const work = [
     summary: 'Advised by Prof. [**Junchen Jiang**](https://people.cs.uchicago.edu/~junchenj/)',
     highlights: [
       { text: 'Working on dynamic KV Cache compression for shared storage systems.' },
-      { text: 'One of the core contributors of open source projects on systems for LLMs: [**LMCache**](https://lmcache.ai/), and [**vllm production stack**](https://github.com/vllm-project/production-stack).' },
+      { text: 'One of the core contributors of open source projects on systems for LLMs: [**LMCache**](https://lmcache.ai/), [**vllm production stack**](https://github.com/vllm-project/production-stack), and [**LMBenchmark**](https://github.com/LMCache/LMBenchmark).' },
+    ],
+  },
+  {
+    name: 'TensorMesh, Inc.',
+    position: 'Summer Intern',
+    url: 'https://tensormesh.ai/',
+    startDate: '2025-06',
+    endDate: '2025-09',
+    highlights: [
+      { text: 'To design, development, test, and maintenance of software applications and open-source projects directly related to Company’s businesses and products.' },
     ],
   },
   {
