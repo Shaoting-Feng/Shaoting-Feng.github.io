@@ -20,7 +20,7 @@ const work = [
     summary: 'Advised by Prof. [**Junchen Jiang**](https://people.cs.uchicago.edu/~junchenj/)',
     highlights: [
       { text: 'Working on dynamic KV Cache compression for shared storage systems.' },
-      { text: 'One of the core contributors of open source projects on systems for LLMs: [**LMCache**](https://lmcache.ai/), [**vllm production stack**](https://github.com/vllm-project/production-stack), and [**LMBenchmark**](https://github.com/LMCache/LMBenchmark).' },
+      { text: 'One of the core contributors of open source projects on systems for LLMs: [**LMCache**](https://lmcache.ai/), [**vllm production stack**](https://docs.vllm.ai/projects/production-stack/en/latest/), and [**LMBenchmark**](https://github.com/LMCache/LMBenchmark).' },
     ],
   },
   {

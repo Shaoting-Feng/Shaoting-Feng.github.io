@@ -7,5 +7,5 @@ I am a Pre-Doc MS student in Computer Science at the University of Chicago, advi
 I am one of the core contributors of the following **open-source projects**:
 
 - [LMCache](https://lmcache.ai/): The first open-source Knowledge Delivery Network (KDN) that accelerates LLM applications up to 8x faster, at 8x lower cost.
-- [vLLM production stack](https://github.com/vllm-project/production-stack): Scale from single vLLM instance to distributed vLLM deployment without changing any application code.
+- [vLLM production stack](https://docs.vllm.ai/projects/production-stack/en/latest/): Scale from single vLLM instance to distributed vLLM deployment without changing any application code.
 - [LMBenchmark](https://github.com/LMCache/LMBenchmark): Systematic and comprehensive benchmarks for LLM systems.

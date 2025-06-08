@@ -10,7 +10,7 @@ const data = [
   },
   {
     title: 'vLLM production stack',
-    link: 'https://github.com/vllm-project/production-stack',
+    link: 'https://docs.vllm.ai/projects/production-stack/en/latest/',
     images: ['/images/projects/prodstack-large.PNG'],
     date: '2025-02',
     desc:
