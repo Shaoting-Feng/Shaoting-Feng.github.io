@@ -25,7 +25,7 @@ const data = [
     images: ['/images/projects/AFDX/overview.png', '/images/projects/AFDX/results.png'],
     // date: '2024-08',
     desc:
-      'Our algorithms turbocharge AFDX networks by smartly grouping message flows into virtual link. Scalable from just a handful of flows to hundreds, they deliver leaner, faster avionics communications with minimal overhead.',
+      'Scalable, bandwidth-preserving algorithms for AFDX virtual links that optimise message allocations.',
   },
   {
     title: 'GIPUT: Maximizing Photo Coverage Efficiency for UAV Trajectory',
