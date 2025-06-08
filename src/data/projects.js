@@ -17,12 +17,12 @@ const data = [
       'Scale from single vLLM instance to distributed vLLM deployment without changing any application code.',
   },
   {
-    title: 'vLLM production stack',
-    link: 'https://github.com/vllm-project/production-stack',
-    images: ['/images/projects/prodstack-large.PNG'],
-    date: '2025-02',
+    title: 'LMBenchmark',
+    link: 'https://github.com/LMCache/LMBenchmark',
+    images: ['/images/projects/LMBenchmark/5.png', '/images/projects/LMBenchmark/1.jpg', '/images/projects/LMBenchmark/2.jpg'],
+    date: '2025-04',
     desc:
-      'Scale from single vLLM instance to distributed vLLM deployment without changing any application code.',
+      'Systematic and comprehensive benchmarks for LLM systems.',
   },
   // {
   //   title: 'Space Potato',
