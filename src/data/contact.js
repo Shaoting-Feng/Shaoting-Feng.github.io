@@ -47,7 +47,7 @@ const data = [
     icon: faGoogleScholar,
   },
   {
-    link: 'https://drive.google.com/file/d/15vPmPeTlgs72iZdKMeELBnxRPtGyYkhI/view?usp=sharing',
+    link: 'https://drive.google.com/file/d/1_rbhX9lqvwUEGqX6wAN0k1IS9euuay0n/view?usp=sharing',
     label: 'CV',
     icon: faFilePdf,
   },
