@@ -2,7 +2,7 @@
 const data = [
   {
     title: 'DroidSpeak: KV Cache Sharing for Cross-LLM Communication and Multi-LLM Serving',
-    subtitle: 'Preprint',
+    subtitle: 'NSDI’26',
     link: 'https://arxiv.org/abs/2411.02820',
     images: ['/images/projects/DroidSpeak/overview.png', '/images/projects/DroidSpeak/results.png', '/images/projects/DroidSpeak/droidspeak_scenarios.png', '/images/projects/DroidSpeak/layer-sens.png'],
     // date: '2024-08',
@@ -11,7 +11,7 @@ const data = [
   },
   {
     title: 'RAGServe: Fast Quality-Aware RAG Systems with Configuration Adaptation',
-    subtitle: 'Preprint',
+    subtitle: 'SOSP’25',
     link: 'https://arxiv.org/abs/2412.10543',
     images: ['/images/projects/RAGServe/design2.png', '/images/projects/RAGServe/design_est.png', '/images/projects/RAGServe/end_to_end_gpt_anntd.png', '/images/projects/RAGServe/per_input_annted.png'],
     // date: '2024-08',

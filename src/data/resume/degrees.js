@@ -16,6 +16,7 @@ const degrees = [
     degree: 'B.E. in Information Engineering',
     link: 'https://en.sjtu.edu.cn/',
     year: 'Sep. 2020 - Jun. 2024',
+    highlight: 'Ranking: top 5%',
   },
 ];
 

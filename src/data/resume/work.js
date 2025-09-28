@@ -19,8 +19,8 @@ const work = [
     startDate: '2024-09',
     summary: 'Advised by Prof. [**Junchen Jiang**](https://people.cs.uchicago.edu/~junchenj/)',
     highlights: [
-      { text: 'Working on dynamic KV Cache compression for shared storage systems.' },
-      { text: 'One of the core contributors of open source projects on systems for LLMs: [**LMCache**](https://lmcache.ai/), [**vllm production stack**](https://docs.vllm.ai/projects/production-stack/en/latest/), and [**LMBenchmark**](https://github.com/LMCache/LMBenchmark).' },
+      { text: 'KV cache optimization in long context and RAG scenarios.' },
+      { text: 'One of the core contributors and maintainers of open source projects on systems for LLMs: [**LMCache**](https://lmcache.ai/), [**vllm production stack**](https://docs.vllm.ai/projects/production-stack/en/latest/), and [**LMBenchmark**](https://github.com/LMCache/LMBenchmark).' },
     ],
   },
   {
@@ -30,7 +30,13 @@ const work = [
     startDate: '2025-06',
     endDate: '2025-09',
     highlights: [
-      { text: 'To design, development, test, and maintenance of software applications and open-source projects directly related to Company’s businesses and products.' },
+      { text: 'Core feature developments of LMCache' },
+      { sub: 'Disaggregated Prefill (PD) with LMCache: more than a 20× improvement in KV cache transmission time compared with native vLLM PD.' },
+      { sub: 'Eviction-based CPU offloading: 2.29× TTFT improvement over public vLLM; 2.79× TTFT improvement over public vLLM + LMCache.' },
+      { sub: 'Multimodal support: supports **all** multimodal models supported by vLLM, and speeds up inference by up to 5.49×.' },
+      { text: 'Core feature developments of vLLM production stack' },
+      { sub: 'Fault tolerance: if a pod fails during inference, the request seamlessly continues on another pod—backed by KV-cache transfer and smart routing—with no user-visible disruption.' },
+      { text: 'Community management for LMCache and vLLM production stack: reviewing PRs, resolving issues, designing CI/CD pipelines, and hosting community meetings.' },
     ],
   },
   {

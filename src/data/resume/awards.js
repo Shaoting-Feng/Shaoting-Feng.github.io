@@ -25,6 +25,12 @@ const awards = [
     place: 'Issued by Shanghai Municipal Education Commission',
     description: 'Awared to 0.175% undergraduate and associate degree students in Shanghai.',
   },
+  {
+    name: 'Shanghai Jiao Tong University Outstanding Scholarship',
+    year: 'Dec 2021-2023',
+    place: 'Issued by Shanghai Jiao Tong University',
+    description: 'Awared to 10% undergraduate students across the university.',
+  },
 ];
 
 export default awards;

@@ -13,13 +13,19 @@
 const pubs = [
   {
     name: 'DroidSpeak: KV Cache Sharing for Cross-LLM Communication and Multi-LLM Serving',
-    pub: 'Preprint',
+    pub: 'NSDI’26',
     people: 'Yuhan Liu, Yuyang Huang, Jiayi Yao, <u>Shaoting Feng</u>, Zhuohan Gu, Kuntai Du, Hanchen Li, Yihua Cheng, Junchen Jiang, Shan Lu, Madan Musuvathi, Esha Choukse',
     pdfUrl: 'https://arxiv.org/abs/2411.02820',
   },
   {
+    name: 'AdaptCache: KV Cache Native Storage Hierarchy for Low-Delay and High-Quality Language Model Serving',
+    pub: 'SOSP workshop BigMem’25',
+    people: '<u>Shaoting Feng</u>, Hanchen Li, Kuntai Du, Zhuohan Gu, Yuhan Liu, Jiayi Yao, Siddhant Ray, Samuel Shen, Yihua Cheng, Ganesh Ananthanarayanan, Junchen Jiang',
+    pdfUrl: 'https://arxiv.org/pdf/2509.00105',
+  },
+  {
     name: 'RAGServe: Fast Quality-Aware RAG Systems with Configuration Adaptation',
-    pub: 'Preprint',
+    pub: 'SOSP’25',
     people: 'Siddhant Ray, Rui Pan, Zhuohan Gu, Kuntai Du, <u>Shaoting Feng</u>, Ganesh Ananthanarayanan, Ravi Netravali, Junchen Jiang',
     pdfUrl: 'https://arxiv.org/abs/2412.10543',
     posterUrl: 'https://drive.google.com/file/d/13Jty9Ji_ICVineQB9Yx7r9eliO8oLpvl/view?usp=sharing',
@@ -38,7 +44,6 @@ const pubs = [
     pub: 'APWeb‑WAIM’24',
     people: '<u>Shaoting Feng</u>, Qinya Li, Yaodong Yang, Fan Wu, Guihai Chen',
     codeUrl: 'https://github.com/Shaoting-Feng/UAV-Trajectory-Algorithm',
-    slidesUrl: 'https://drive.google.com/file/d/1mCJGBDjIUg9ix9JzXkK9mIaMy0yn9fDK/view?usp=drive_link',
     pdfUrl: 'https://link.springer.com/chapter/10.1007/978-981-97-7232-2_26',
   },
 ];
