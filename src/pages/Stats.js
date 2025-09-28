@@ -21,7 +21,7 @@ const Stats = () => (
         </div>
       </header>
       <Personal />
-      <Markdown>I enjoy musicals and plays, [hiking](https://www.alltrails.com/en/members/shaoting-feng?utm_campaign=mobile-iphone&sh=idkjan), and exploring museums. Follow me on [Instagram](https://www.instagram.com/shoatech/)!</Markdown>
+      <Markdown>I enjoy [musicals and plays](https://www.theaterdiary.com/user/self/?id=kNF9OOnAfR), [hiking](https://www.alltrails.com/en/members/shaoting-feng?utm_campaign=mobile-iphone&sh=idkjan), and exploring museums. Follow me on [Instagram](https://www.instagram.com/shoatech/)!</Markdown>
       <br />
       <Markdown>I also hope to get myself ready for the [memory contest](https://memoryleague.com/?utm_source=chatgpt.com#!/home) and [spartan race](https://www.spartan.com/en/race/sprint) in the future.</Markdown>
       {/* <Site /> */}
