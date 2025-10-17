@@ -4,37 +4,37 @@ const data = [
     title: 'DroidSpeak: KV Cache Sharing for Cross-LLM Communication and Multi-LLM Serving',
     subtitle: 'NSDI’26',
     link: 'https://arxiv.org/abs/2411.02820',
-    images: ['/images/projects/DroidSpeak/overview.png', '/images/projects/DroidSpeak/results.png', '/images/projects/DroidSpeak/droidspeak_scenarios.png', '/images/projects/DroidSpeak/layer-sens.png'],
+    images: ['/images/projects/DroidSpeak/system.png', '/images/projects/DroidSpeak/e2e_system.png', '/images/projects/DroidSpeak/overall-upper.png'],
     // date: '2024-08',
     desc:
-      'DroidSpeak turbocharges multi-LLM pipelines by sharing KV caches across fine-tuned models, slashing latency by up to 2.6× and boosting throughput by 3× with negligible accuracy loss. ',
+      'The first distributed LLM inference system that enables KV cache reuse across distributed nodes running inference of different LLMs',
   },
   {
-    title: 'RAGServe: Fast Quality-Aware RAG Systems with Configuration Adaptation',
+    title: 'METIS: Fast Quality-Aware RAG Systems with Configuration Adaptation',
     subtitle: 'SOSP’25',
-    link: 'https://arxiv.org/abs/2412.10543',
-    images: ['/images/projects/RAGServe/design2.png', '/images/projects/RAGServe/design_est.png', '/images/projects/RAGServe/end_to_end_gpt_anntd.png', '/images/projects/RAGServe/per_input_annted.png'],
+    link: 'https://dl.acm.org/doi/10.1145/3731569.3764855',
+    images: ['/images/projects/RAGServe/design2.png', '/images/projects/RAGServe/design_est.png', '/images/projects/RAGServe/end_to_end_gpt_anntd.png'],
     // date: '2024-08',
     desc:
-      'RAGServe turbocharges RAG by pruning and adapting per-query configurations on the fly, slashing latency by up to 2.5× without sacrificing quality.',
+      'The first RAG system that jointly schedules queries and adapts the key RAG configurations of each query, such as the number of retrieved text chunks and synthesis methods',
   },
   {
     title: 'Grouping Algorithms for Optimal Configuration of Virtual Links in AFDX',
     subtitle: 'JCST’25',
     link: 'https://jcst.ict.ac.cn/en/article/doi/10.1007/s11390-025-4525-x?viewType=HTML',
-    images: ['/images/projects/AFDX/overview.png', '/images/projects/AFDX/results.png'],
+    images: ['/images/projects/AFDX/overview.png', '/images/projects/AFDX/Fig 6.png', '/images/projects/AFDX/results.png'],
     // date: '2024-08',
     desc:
-      'Scalable, bandwidth-preserving algorithms for AFDX virtual links that optimise message allocations.',
+      'Scalably assigning messages to Avionics Full-Duplex Switched Ethernet (AFDX) virtual links reduces bandwidth usage by 24.7%.',
   },
   {
     title: 'GIPUT: Maximizing Photo Coverage Efficiency for UAV Trajectory',
     subtitle: 'APWeb‑WAIM’24',
     link: 'https://link.springer.com/chapter/10.1007/978-981-97-7232-2_26',
-    images: ['/images/projects/giput1.png', '/images/projects/giput2.png', '/images/projects/giput3.png', '/images/projects/giput4.png'],
+    images: ['/images/projects/giput3.png', '/images/projects/giput2.png'],
     // date: '2024-08',
     desc:
-      'GIPUT models objects with realistic shapes, enabling UAVs to learn optimal trajectories while considering photo coverage, energy consumption, and bandwidth utilization. It achieves twice the efficiency of state-of-the-art algorithms.',
+      'GIPUT accurately models objects with realistic shapes, enabling precise computation of UAV photo coverage, which is essential for the UAV to learn optimal trajectories.',
   },
   // {
   //   title: 'Space Potato',

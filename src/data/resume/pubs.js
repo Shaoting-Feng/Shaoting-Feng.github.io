@@ -12,6 +12,13 @@
  */
 const pubs = [
   {
+    name: 'LMCache: An Efficient KV Cache Layer for Enterprise-Scale LLM Inference',
+    pub: 'arXiv',
+    people: 'Yihua Cheng<span>*</span>, Yuhan Liu<span>*</span>, Jiayi Yao<span>*</span>, Yuwei An, Xiaokun Chen, <u>Shaoting Feng</u>, Yuyang Huang, Samuel Shen, Kuntai Du, Junchen Jiang',
+    pdfUrl: 'https://arxiv.org/abs/2510.09665',
+    codeUrl: 'https://github.com/LMCache/LMCache',
+  },
+  {
     name: 'DroidSpeak: KV Cache Sharing for Cross-LLM Communication and Multi-LLM Serving',
     pub: 'NSDI’26',
     people: 'Yuhan Liu, Yuyang Huang, Jiayi Yao, <u>Shaoting Feng</u>, Zhuohan Gu, Kuntai Du, Hanchen Li, Yihua Cheng, Junchen Jiang, Shan Lu, Madan Musuvathi, Esha Choukse',
@@ -22,12 +29,14 @@ const pubs = [
     pub: 'SOSP workshop BigMem’25',
     people: '<u>Shaoting Feng</u>, Hanchen Li, Kuntai Du, Zhuohan Gu, Yuhan Liu, Jiayi Yao, Siddhant Ray, Samuel Shen, Yihua Cheng, Ganesh Ananthanarayanan, Junchen Jiang',
     pdfUrl: 'https://arxiv.org/pdf/2509.00105',
+    slidesUrl: 'https://docs.google.com/presentation/d/1UWIFYIoNfhqE6urXdPH-vCjwsN59L_UX/edit?usp=sharing&ouid=117429613749838892485&rtpof=true&sd=true',
+    codeUrl: 'https://github.com/Shaoting-Feng/LMCache/tree/9567da999f6c19e9743bb416568647be4155175e',
   },
   {
-    name: 'RAGServe: Fast Quality-Aware RAG Systems with Configuration Adaptation',
+    name: 'METIS: Fast Quality-Aware RAG Systems with Configuration Adaptation',
     pub: 'SOSP’25',
     people: 'Siddhant Ray, Rui Pan, Zhuohan Gu, Kuntai Du, <u>Shaoting Feng</u>, Ganesh Ananthanarayanan, Ravi Netravali, Junchen Jiang',
-    pdfUrl: 'https://arxiv.org/abs/2412.10543',
+    pdfUrl: 'https://dl.acm.org/doi/10.1145/3731569.3764855',
     posterUrl: 'https://drive.google.com/file/d/13Jty9Ji_ICVineQB9Yx7r9eliO8oLpvl/view?usp=sharing',
 
   },
