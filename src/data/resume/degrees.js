@@ -3,7 +3,8 @@ const degrees = [
     school: 'University of Chicago',
     degree: 'Pre-Doc MS in Computer Science',
     link: 'https://www.uchicago.edu/en',
-    year: 'Sep. 2024 - Dec. 2025 (expected)',
+    year: 'Sep. 2024 - Dec. 2025',
+    highlight: 'Advised by Prof. Junchen Jiang',
   },
   {
     school: 'EPFL (Ecole Polytechnique Fédérale de Lausanne)',
@@ -16,7 +17,7 @@ const degrees = [
     degree: 'B.E. in Information Engineering',
     link: 'https://en.sjtu.edu.cn/',
     year: 'Sep. 2020 - Jun. 2024',
-    highlight: 'Ranking: top 5%',
+    highlight: 'Ranking: Top 5%',
   },
 ];
 

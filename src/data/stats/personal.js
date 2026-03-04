@@ -34,7 +34,7 @@ const data = [
   {
     key: 'location',
     label: 'Current city',
-    value: 'Foster City, CA',
+    value: 'San Carlos, CA',
   },
   // {
   //   key: 'hiking',
