@@ -12,9 +12,15 @@
  */
 const pubs = [
   {
+    name: 'EVICPRESS: Joint KV-Cache Compression and Eviction for Efficient LLM Serving',
+    pub: 'arXiv',
+    people: '<u>Shaoting Feng</u><span>*</span>, Yuhan Liu<span>*</span>, Hanchen Li, Xiaokun Chen, Samuel Shen, Kuntai Du, Zhuohan Gu, Rui Zhang, Yuyang Huang, Yihua Cheng, Jiayi Yao, Qizheng Zhang, Ganesh Ananthanarayanan, Junchen Jiang',
+    pdfUrl: 'https://arxiv.org/abs/2512.14946',
+  },
+  {
     name: 'LMCache: An Efficient KV Cache Layer for Enterprise-Scale LLM Inference',
     pub: 'arXiv',
-    people: 'Yihua Cheng<span>*</span>, Yuhan Liu<span>*</span>, Jiayi Yao<span>*</span>, Yuwei An, Xiaokun Chen, <u>Shaoting Feng</u>, Yuyang Huang, Samuel Shen, Kuntai Du, Junchen Jiang',
+    people: 'Yuhan Liu<span>*</span>, Yihua Cheng<span>*</span>, Jiayi Yao<span>*</span>, Yuwei An, Xiaokun Chen, <u>Shaoting Feng</u>, Yuyang Huang, Samuel Shen, Rui Zhang, Kuntai Du, Junchen Jiang',
     pdfUrl: 'https://arxiv.org/abs/2510.09665',
     codeUrl: 'https://github.com/LMCache/LMCache',
   },
@@ -27,7 +33,7 @@ const pubs = [
   {
     name: 'AdaptCache: KV Cache Native Storage Hierarchy for Low-Delay and High-Quality Language Model Serving',
     pub: 'SOSP workshop BigMem’25',
-    people: '<u>Shaoting Feng</u>, Hanchen Li, Kuntai Du, Zhuohan Gu, Yuhan Liu, Jiayi Yao, Siddhant Ray, Samuel Shen, Yihua Cheng, Ganesh Ananthanarayanan, Junchen Jiang',
+    people: '<u>Shaoting Feng</u><span>*</span>, Hanchen Li<span>*</span>, Kuntai Du, Zhuohan Gu, Yuhan Liu, Jiayi Yao, Siddhant Ray, Samuel Shen, Yihua Cheng, Ganesh Ananthanarayanan, Junchen Jiang',
     pdfUrl: 'https://arxiv.org/pdf/2509.00105',
     slidesUrl: 'https://docs.google.com/presentation/d/1UWIFYIoNfhqE6urXdPH-vCjwsN59L_UX/edit?usp=sharing&ouid=117429613749838892485&rtpof=true&sd=true',
     codeUrl: 'https://github.com/Shaoting-Feng/LMCache/tree/9567da999f6c19e9743bb416568647be4155175e',
@@ -39,21 +45,6 @@ const pubs = [
     pdfUrl: 'https://dl.acm.org/doi/10.1145/3731569.3764855',
     posterUrl: 'https://drive.google.com/file/d/13Jty9Ji_ICVineQB9Yx7r9eliO8oLpvl/view?usp=sharing',
 
-  },
-  {
-    name: 'Grouping Algorithms for Optimal Configuration of Virtual Links in AFDX',
-    pub: 'JCST’25',
-    people: '<u>Shaoting Feng</u>, Quanquan Peng, Qinya Li, Fan Wu, Guihai Chen',
-    codeUrl: 'https://github.com/Shaoting-Feng/Grouping-Algorithms-of-Virtual-Links',
-    slidesUrl: 'https://docs.google.com/presentation/d/1Opyq9rNeQE5s-zv5Uxn78LpXPJYm9If3/edit?usp=sharing&ouid=117429613749838892485&rtpof=true&sd=true',
-    pdfUrl: 'https://jcst.ict.ac.cn/en/article/doi/10.1007/s11390-025-4525-x?viewType=HTML',
-  },
-  {
-    name: 'GIPUT: Maximizing Photo Coverage Efficiency for UAV Trajectory',
-    pub: 'APWeb‑WAIM’24',
-    people: '<u>Shaoting Feng</u>, Qinya Li, Yaodong Yang, Fan Wu, Guihai Chen',
-    codeUrl: 'https://github.com/Shaoting-Feng/UAV-Trajectory-Algorithm',
-    pdfUrl: 'https://link.springer.com/chapter/10.1007/978-981-97-7232-2_26',
   },
 ];
 

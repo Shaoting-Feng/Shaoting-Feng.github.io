@@ -13,43 +13,28 @@
  */
 const work = [
   {
-    name: 'Univerisity of Chicago',
-    position: 'Graduate Student',
-    url: 'https://uchi-jcl.github.io/group-website/',
-    startDate: '2024-09',
-    summary: 'Advised by Prof. [**Junchen Jiang**](https://people.cs.uchicago.edu/~junchenj/)',
-    highlights: [
-      { text: 'KV cache optimization in long context and RAG scenarios.' },
-      { text: 'One of the core contributors and maintainers of open source projects on systems for LLMs: [**LMCache**](https://lmcache.ai/), [**vllm production stack**](https://docs.vllm.ai/projects/production-stack/en/latest/), and [**LMBenchmark**](https://github.com/LMCache/LMBenchmark).' },
-    ],
-  },
-  {
     name: 'TensorMesh, Inc.',
-    position: 'Summer Intern',
+    position: 'Engineering Intern',
     url: 'https://tensormesh.ai/',
     startDate: '2025-06',
-    endDate: '2025-09',
+    endDate: '2026-05',
     highlights: [
-      { text: 'Core feature developments of LMCache' },
-      { sub: 'Disaggregated Prefill (PD) with LMCache: more than a 20× improvement in KV cache transmission time compared with native vLLM PD.' },
-      { sub: 'Eviction-based CPU offloading: 2.29× TTFT improvement over public vLLM; 2.79× TTFT improvement over public vLLM + LMCache.' },
-      { sub: 'Multimodal support: supports **all** multimodal models supported by vLLM, and speeds up inference by up to 5.49×.' },
-      { text: 'Core feature developments of vLLM production stack' },
-      { sub: 'Fault tolerance: if a pod fails during inference, the request seamlessly continues on another pod—backed by KV-cache transfer and smart routing—with no user-visible disruption.' },
-      { text: 'Community management for LMCache and vLLM production stack: reviewing PRs, resolving issues, designing CI/CD pipelines, and hosting community meetings.' },
+      { text: 'Impact: Widely used in enterprise settings (e.g., NVIDIA, IBM Cloud). >300TB KV cache data + 1.28 billion hit tokens weekly.' },
+      { text: 'Contributed 74 commits (+11,164 / -3,251 LOC), ranking 5th in total contributions.' },
+      { text: 'Developed prefill decode disaggregation to reduce tail latency, achieving 20× faster KV cache transmission over vLLM.' },
+      { text: 'Developed dynamic CPU offloading for jointly managing GPU and CPU memory, achieving 2.29× TTFT improvement over vLLM.' },
+      { text: 'Developed multimodal KV cache offloading to accelerate image, video, and audio inference, achieving 5.49× TTFT improvement.' },
     ],
   },
   {
     name: 'University of Pennsylvania',
-    position: 'Student Intern',
+    position: 'Research Intern',
     url: 'https://dsl.cis.upenn.edu/',
     startDate: '2023-06',
     endDate: '2023-09',
-    summary: 'Advised by Prof. [**Vincent Liu**](https://vincen.tl/) and Dr. [**Liangcheng Yu**](https://liangchengyu.com/)',
     highlights: [
-      { text: 'Developed a **practical fairness metric** that quantifies packet-level deviations from user specific baselines.' },
-      { text: 'Implemented and validated the proposed metric using the **ns-3 simulator**, demonstrating its effectiveness in dynamic **data center network** scenarios.' },
-      { text: 'Check out here: [slides](https://docs.google.com/presentation/d/1BkVvrqSuPSJwAKRlfyBuOneNzDaOKV6v/edit?usp=drive_link&ouid=117429613749838892485&rtpof=true&sd=true) and [pdf (thesis in Chinese)](https://drive.google.com/file/d/12yxXhvKhErFywlyVtDx2QBIHNTfNWf4k/view?usp=drive_link).' },
+      { text: 'Advised by Prof. [**Vincent Liu**](https://vincen.tl/) and Dr. [**Liangcheng Yu**](https://liangchengyu.com/)' },
+      { text: 'Designed practical fairness metric for network resource allocation.' },
     ],
   },
   // {

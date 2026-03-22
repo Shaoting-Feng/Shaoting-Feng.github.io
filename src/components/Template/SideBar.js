@@ -15,7 +15,7 @@ const SideBar = () => (
       <header>
         <h2>Shaoting Feng</h2>
         <p>
-          <a href="mailto:shaotingf@uchicago.edu">shaotingf@uchicago.edu</a>
+          <a href="mailto:shaotingf@tensormesh.ai">shaotingf@tensormesh.ai</a>
         </p>
       </header>
     </section>
@@ -23,13 +23,13 @@ const SideBar = () => (
     <section className="blurb">
       <h2>About</h2>
       <p>
-        Hi, I&apos;m Shaoting. My research interests lie in systems for large language models (LLMs) and computer networking. I am fortunate to be advised by Prof.{' '}<a href="https://people.cs.uchicago.edu/~junchenj/">Junchen Jiang</a> at the University of Chicago.
+        Hi, I&apos;m Shaoting. I am a PhD student. I am interested in building systems that can support real-world machine learning workloads. I am also a core member of the <a href="https://github.com/LMCache/LMCache">LMCache</a> team.
       </p>
       <ul className="actions">
         <li>
-          {!window.location.pathname.includes('/resume') ? (
-            <Link to="/resume" className="button">
-              Learn More
+          {!window.location.pathname.includes('/about') ? (
+            <Link to="/about" className="button">
+              About me
             </Link>
           ) : (
             <Link to="/projects" className="button">

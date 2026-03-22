@@ -52,7 +52,7 @@ const data = [
     icon: faFilePdf,
   },
   {
-    link: 'mailto:shaotingf@uchicago.edu',
+    link: 'mailto:shaotingf@tensormesh.ai',
     label: 'Email',
     icon: faEnvelope,
   },
