@@ -17,14 +17,6 @@ const data = [
       'Cluster-wide Kubernetes orchestration.',
   },
   {
-    title: 'LMBenchmark',
-    link: 'https://github.com/LMCache/LMBenchmark',
-    images: ['/images/projects/LMBenchmark/5.png', '/images/projects/LMBenchmark/1.jpg', '/images/projects/LMBenchmark/2.jpg'],
-    subtitle: 'Star 52',
-    desc:
-      'Systematic and comprehensive benchmarks for LLM systems',
-  },
-  {
     title: 'EVICPRESS: Joint KV-Cache Compression and Eviction for Efficient LLM Serving',
     subtitle: 'arXiv',
     link: 'https://arxiv.org/abs/2512.14946',
@@ -50,6 +42,14 @@ const data = [
     // date: '2024-08',
     desc:
       'The first RAG system that jointly schedules queries and adapts the key RAG configurations of each query, such as the number of retrieved text chunks and synthesis methods.',
+  },
+  {
+    title: 'LMBenchmark',
+    link: 'https://github.com/LMCache/LMBenchmark',
+    images: ['/images/projects/LMBenchmark/5.png', '/images/projects/LMBenchmark/1.jpg', '/images/projects/LMBenchmark/2.jpg'],
+    subtitle: 'Star 52',
+    desc:
+      'Systematic and comprehensive benchmarks for LLM systems',
   },
   // {
   //   title: 'Space Potato',
