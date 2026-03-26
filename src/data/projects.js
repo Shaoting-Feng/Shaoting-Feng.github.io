@@ -3,6 +3,7 @@ const data = [
   {
     title: 'LMCache',
     link: 'https://lmcache.ai/',
+    githubRepo: 'LMCache/LMCache',
     images: ['/images/projects/LMCache/e2e_sys_diagram.png', '/images/projects/lmcache1.gif', '/images/projects/lmcache2.gif', '/images/projects/lmcache1.png'],
     subtitle: 'Star 7.7k',
     desc:
@@ -11,6 +12,7 @@ const data = [
   {
     title: 'vLLM production stack',
     link: 'https://docs.vllm.ai/projects/production-stack/en/latest/',
+    githubRepo: 'vllm-project/production-stack',
     images: ['/images/projects/prodstack-large.PNG'],
     subtitle: 'Star 2.2k',
     desc:
@@ -46,6 +48,7 @@ const data = [
   {
     title: 'LMBenchmark',
     link: 'https://github.com/LMCache/LMBenchmark',
+    githubRepo: 'LMCache/LMBenchmark',
     images: ['/images/projects/LMBenchmark/5.png', '/images/projects/LMBenchmark/1.jpg', '/images/projects/LMBenchmark/2.jpg'],
     subtitle: 'Star 52',
     desc:
