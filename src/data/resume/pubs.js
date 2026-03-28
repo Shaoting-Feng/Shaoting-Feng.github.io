@@ -35,7 +35,7 @@ const pubs = [
     pub: 'SOSP workshop BigMem’25',
     people: '<u>Shaoting Feng</u><span>*</span>, Hanchen Li<span>*</span>, Kuntai Du, Zhuohan Gu, Yuhan Liu, Jiayi Yao, Siddhant Ray, Samuel Shen, Yihua Cheng, Ganesh Ananthanarayanan, Junchen Jiang',
     pdfUrl: 'https://arxiv.org/pdf/2509.00105',
-    slidesUrl: 'https://docs.google.com/presentation/d/1UWIFYIoNfhqE6urXdPH-vCjwsN59L_UX/edit?usp=sharing&ouid=117429613749838892485&rtpof=true&sd=true',
+    slidesUrl: 'https://docs.google.com/presentation/d/1UWIFYIoNfhqE6urXdPH-vCjwsN59L_UX/edit?usp=sharing',
     codeUrl: 'https://github.com/Shaoting-Feng/LMCache/tree/9567da999f6c19e9743bb416568647be4155175e',
   },
   {
@@ -43,7 +43,7 @@ const pubs = [
     pub: 'SOSP’25',
     people: 'Siddhant Ray, Rui Pan, Zhuohan Gu, Kuntai Du, <u>Shaoting Feng</u>, Ganesh Ananthanarayanan, Ravi Netravali, Junchen Jiang',
     pdfUrl: 'https://dl.acm.org/doi/10.1145/3731569.3764855',
-    posterUrl: 'https://drive.google.com/file/d/13Jty9Ji_ICVineQB9Yx7r9eliO8oLpvl/view?usp=sharing',
+    posterUrl: '/ragserve_poster.pdf',
 
   },
 ];

@@ -21,7 +21,7 @@ const pre = [
   {
     name: 'GIPUT: Maximizing Photo Coverage Efficiency for UAV Trajectory',
     loc1: 'Jinhua, Zhejiang, China',
-    pre1: '- APWeb-WAIM 2024 [[slides](https://drive.google.com/file/d/1rJe5Lgwx82F1_pnkS8PCPddqyr1zbJsc/view?usp=sharing)], Aug. 2024',
+    pre1: '- APWeb-WAIM 2024 [[slides](https://drive.google.com/file/d/1mCJGBDjIUg9ix9JzXkK9mIaMy0yn9fDK/view?usp=sharing)], Aug. 2024',
   },
 ];
 

@@ -47,7 +47,7 @@ const data = [
     icon: faGoogleScholar,
   },
   {
-    link: 'https://drive.google.com/file/d/1yt-bvYDMgD85wX-qII7b_VAHidW9PUgQ/view?usp=sharing',
+    link: '/resume.pdf',
     label: 'CV',
     icon: faFilePdf,
   },
