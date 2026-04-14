@@ -23,7 +23,7 @@ const SideBar = () => (
     <section className="blurb">
       <h2>About</h2>
       <p>
-        Hi, I&apos;m Shaoting. I am a PhD student. I am interested in building systems that can support real-world machine learning workloads. I am also a core member of the <a href="https://github.com/LMCache/LMCache">LMCache</a> team.
+        Hi, I&apos;m Shaoting. I am an incoming PhD student at the <a href="https://syfi.cs.washington.edu/">SyFI Lab</a> at <a href="https://www.washington.edu/">UW</a>, advised by Professor <a href="https://stephanie-wang.github.io/">Stephanie Wang</a>. I am interested in building systems that can support real-world machine learning workloads. I am also a core member of the <a href="https://github.com/LMCache/LMCache">LMCache</a> team.
       </p>
       <ul className="actions">
         <li>
