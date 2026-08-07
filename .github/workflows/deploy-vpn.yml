@@ -11,7 +11,10 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  # Deliberately NOT the shared "pages" group: a run stuck in "waiting" on the
+  # github-pages environment (2026-08-06 outage) held that group and starved
+  # every VPN deploy behind it.
+  group: pages-vpn
   cancel-in-progress: false
 
 jobs:
