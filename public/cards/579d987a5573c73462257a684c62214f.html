@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Which Card?</title>
+<style>
+:root{--bg:#0f1115;--panel:#171a21;--panel2:#1e222b;--line:#2a2f3a;--ink:#e8eaed;
+ --dim:#9aa1ad;--faint:#6b7280;--go:#4f9cf9;--boa:#e05c5c;--amex:#3fb98a;--warn:#e0a34a}
+@media(prefers-color-scheme:light){:root{--bg:#f5f6f8;--panel:#fff;--panel2:#f0f2f5;--line:#dfe3e9;
+ --ink:#12141a;--dim:#5b6472;--faint:#8b93a1;--go:#1e6fd9;--boa:#c33;--amex:#0d8f61;--warn:#a86b12}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;-webkit-text-size-adjust:100%;padding-bottom:44px}
+.wrap{max-width:760px;margin:0 auto;padding:16px}
+h1{font-size:20px;margin:4px 0 2px;letter-spacing:-.01em}
+.sub{color:var(--dim);font-size:13px;margin-bottom:16px}
+#q{width:100%;padding:15px 16px;font-size:17px;border-radius:12px;border:1px solid var(--line);background:var(--panel);color:var(--ink);outline:none}
+#q:focus{border-color:var(--go)}
+.tabs{display:flex;gap:5px;margin:14px 0;flex-wrap:wrap}
+.tab{flex:1;min-width:88px;text-align:center;padding:9px 6px;border-radius:9px;background:var(--panel);border:1px solid var(--line);color:var(--dim);font-size:12.5px;cursor:pointer;user-select:none}
+.tab.on{background:var(--panel2);color:var(--ink);border-color:var(--go)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:10px}
+.verdict{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap}
+.big{font-size:19px;font-weight:640;letter-spacing:-.01em}
+.rate{font-size:19px;font-weight:700;font-variant-numeric:tabular-nums}
+.GO{color:var(--go)}.BOA{color:var(--boa)}.AMEX{color:var(--amex)}
+.why{color:var(--dim);font-size:13.5px;margin-top:6px}
+.deal{margin-top:10px;padding:11px;border-radius:9px;background:var(--panel2);border-left:3px solid var(--warn)}
+.deal.a{border-left-color:var(--amex)}.deal.g{border-left-color:var(--go)}.deal.b{border-left-color:var(--boa)}
+.tag{display:inline-block;font-size:11px;padding:2px 7px;border-radius:20px;background:var(--panel2);border:1px solid var(--line);color:var(--dim);margin-right:5px}
+.row{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+.row:last-child{border-bottom:0}
+.row .m{font-weight:560}
+.row .r{font-weight:660;white-space:nowrap;font-variant-numeric:tabular-nums;text-align:right}
+.grp{font-size:12px;text-transform:uppercase;letter-spacing:.07em;color:var(--faint);margin:20px 0 6px}
+.cap{color:var(--faint);font-size:12px}
+.none{color:var(--dim);padding:20px;text-align:center;font-size:14px}
+.note{font-size:12.5px;color:var(--faint);margin-top:14px;line-height:1.55}
+.hide{display:none}
+kbd{background:var(--panel2);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:11px;font-family:inherit;color:var(--dim)}
+.win{font-weight:700}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Which card?</h1>
+  <div class="sub">Three-card routing and live merchant offers &middot; Aug 2026</div>
+  <input id="q" placeholder="CVS, Shake Shack, Costco, Paramount…" autocomplete="off" autocapitalize="off" spellcheck="false">
+  <div class="tabs">
+    <div class="tab on" data-v="search">Search</div>
+    <div class="tab" data-v="conflict">Conflicts</div>
+    <div class="tab" data-v="rules">Rules</div>
+    <div class="tab" data-v="amex">Amex (91)</div>
+    <div class="tab" data-v="usb">U.S. Bank (71)</div>
+    <div class="tab" data-v="boa">BofA (683)</div>
+    <div class="tab" data-v="todo">How to use</div>
+  </div>
+  <div id="search"></div><div id="conflict" class="hide"></div><div id="rules" class="hide"></div>
+  <div id="amex" class="hide"></div><div id="usb" class="hide"></div><div id="boa" class="hide"></div><div id="todo" class="hide"></div>
+</div>
+<script>
+const CARD={GO:{label:"Altitude Go",cls:"GO"},BOA:{label:"BofA CCR",cls:"BOA"},AMEX:{label:"Amex BCE",cls:"AMEX"}};
+const RULES=[
+ {cat:"Dining / takeout / delivery",card:"GO",rate:"4%",why:"Uncapped, covers DoorDash & Uber Eats."},
+ {cat:"Groceries",card:"AMEX",rate:"3%",why:"Amex 3% > BofA 2.5% > Altitude Go 2%. $6,000/yr cap."},
+ {cat:"Warehouse (Costco, Sam's)",card:"BOA",rate:"2.5%",why:"Amex excluded at clubs, and US Costco is Visa-only."},
+ {cat:"Gas",card:"AMEX",rate:"3%",why:"Except Costco gas — Visa only, so Altitude Go at 2%."},
+ {cat:"Airfare / Hotel / Tours",card:"BOA",rate:"3.75%",why:"Your 3% pick is Travel. Nothing else pays over 1%."},
+ {cat:"Car rental",card:"AMEX",rate:"1%",why:"Deliberately the wrong rate — reserve AND pay in full on the Amex, decline the counter CDW, and you get loss/damage cover."},
+ {cat:"Online retail / Amazon",card:"AMEX",rate:"3%",why:"Shares the $6,000/yr cap. Anthropic confirmed 3%."},
+ {cat:"Streaming",card:"GO",rate:"2%",why:"Plus $15/yr credit after 11 straight months of streaming charges."},
+ {cat:"Drugstore",card:"BOA",rate:"1.25%",why:"Base — but the CVS 10% deal makes Altitude Go better at CVS now."},
+ {cat:"Transit / rideshare",card:"BOA",rate:"1.25%"},
+ {cat:"Phone (Tello) / Internet",card:"BOA",rate:"1.25%",why:"Tello confirmed NOT online retail."},
+ {cat:"Subscriptions (OpenAI, iCloud)",card:"AMEX",rate:"3%"},
+ {cat:"Everything else",card:"BOA",rate:"1.25%"}];
+const M={"doordash":0,"uber eats":0,"grubhub":0,"restaurant":0,"cafe":0,"coffee":0,"starbucks":0,"chipotle":0,"takeout":0,"food":0,
+ "safeway":1,"trader joe":1,"whole foods":1,"qfc":1,"99 ranch":1,"kroger":1,"grocery":1,"supermarket":1,"h mart":1,
+ "costco":2,"warehouse":2,"shell":3,"exxon":3,"arco":3,"ev charging":3,
+ "delta":4,"united":4,"airfare":4,"flight":4,"hotel":4,"marriott":4,"hilton":4,"airbnb":4,"booking":4,"expedia":4,"cruise":4,
+ "hertz":5,"avis":5,"enterprise":5,"car rental":5,"rental car":5,
+ "amazon":6,"amzn":6,"ebay":6,"online":6,"nordstrom":6,"rei":6,
+ "netflix":7,"spotify":7,"hulu":7,"youtube":7,"streaming":7,
+ "walgreens":8,"rite aid":8,"pharmacy":8,"drugstore":8,
+ "lyft":9,"transit":9,"parking":9,"toll":9,"orca":9,
+ "tello":10,"visible":10,"verizon":10,"comcast":10,"xfinity":10,"internet":10,"phone":10,
+ "openai":11,"chatgpt":11,"anthropic":11,"claude":11,"icloud":11,"github":11,"subscription":11,
+ "walmart":12,"target":12};
+// Amex Offers: [name, terms, maxValue, expiry]
+const AX=[["Homes & Villas by Marriott Bonvoy","Spend $1,000, earn $350 back",350,"9/30/26"],
+["Fontainebleau Las Vegas","Spend $500, earn $100 back, up to 3x",300,"8/31/26"],
+["Tonal — Smart Home Gym","Spend $1,000, earn $250 back",250,"9/30/26"],
+["ADT — Home Security","Spend $250, earn $250 back",250,"11/3/26"],
+["iHerb.com","4% back",250,"9/1/26"],
+["Amex Venue Collection","10% on concessions, per calendar year",250,"12/31/26"],
+["dyson.com","2% back",250,"9/1/26"],
+["fahertybrand.com","4% back",250,"9/1/26"],
+["tnuck.com","5% back",250,"9/1/26"],
+["Away","4% back",250,"9/1/26"],
+["Dine in the UK","10% back",250,"8/31/26"],
+["eltamd.com","9% back",250,"9/1/26"],
+["Burberry","Spend $600, earn $120 back",120,"10/16/26"],
+["Hotels.com/amex (prepaid)","10% back",100,"8/31/26"],
+["Sixt.com — Car Rental","Spend $500, earn $100",100,"9/15/26"],
+["Ancestry — Family History","20% back",100,"12/29/26"],
+["Accor Luxury Hotels","Spend $500, earn $100 back",100,"11/2/26"],
+["Teleflora","Spend $20, earn $10 back, up to 10x",100,"8/31/26"],
+["Function Health","Spend $365, earn $100 back",100,"11/16/26"],
+["Fubo","Spend $65, earn $30 back, up to 3x",90,"11/7/26"],
+["$84 Disney Streaming Credit","ENROLL — up to $7/month on Disney+, Hulu or ESPN+",84,"ongoing"],
+["Benihana","Spend $100, earn $20 back, up to 4x",80,"10/11/26"],
+["ZWILLING.com","Spend $200, earn $40 back, up to 2x",80,"9/30/26"],
+["GoodChop","20% on a single purchase",65,"8/23/26"],
+["Wild Alaskan Company","Spend $125, earn $30 back, up to 2x",60,"10/18/26"],
+["AT&T Wireless (new accounts)","Spend $65, earn $50 back",50,"12/31/26"],
+["AT&T Fiber (new accounts)","Spend $55, earn $50 back",50,"12/31/26"],
+["Oura","Spend $400, earn $50 back",50,"10/13/26"],
+["Poshmark","Spend $200, earn $50 back",50,"9/30/26"],
+["Club Pilates","Spend $150, earn $50 back",50,"8/31/26"],
+["Tecovas","Spend $250, earn $50 back",50,"9/19/26"],
+["Sony Electronics","Spend $250, earn $50 back",50,"9/26/26"],
+["gorjana","Spend $150, earn $25 back, up to 2x",50,"9/15/26"],
+["Maui Jim","Spend $250, earn $50 back",50,"10/1/26"],
+["Walmart+ Annual Membership","Spend $98, earn $49 back",49,"11/14/26"],
+["Magnifi","Spend $14, earn $14 back, up to 3x",42,"9/30/26"],
+["Paramount+","Spend $13.99, earn $13.99 back, up to 3x",41.97,"10/27/26"],
+["QuikStop — Pay at the Pump","5% back",40,"11/27/26"],
+["Caesars Rewards","Spend $200, earn $40 back",40,"8/31/26"],
+["LensCrafters","Spend $225, earn $40 back",40,"8/31/26"],
+["AllTrails.com","50% back",40,"9/22/26"],
+["BedBathandBeyond.com","Spend $199, earn $30 back",30,"8/31/26"],
+["Turo — Car Rental","Spend $150, earn $30 back",30,"12/31/26"],
+["Lids.com","Spend $75, earn $15 back, up to 2x",30,"1/1/27"],
+["Outback Steakhouse (CA/NV/NM/AZ/CO)","Spend $75, earn $15 back, up to 2x",30,"9/3/26"],
+["Super Duolingo Annual","Spend $75, earn $30",30,"11/30/26"],
+["GlassesUSA.com","Spend $150, earn $30 back",30,"8/18/26"],
+["NOBULL","Spend $150, earn $30 back",30,"12/22/26"],
+["Dropbox","40% back",30,"11/25/26"],
+["Hard Rock Cafe","Spend $75, earn $15 back, up to 2x",30,"8/18/26"],
+["HBO Max Annual","Spend $99, earn $25",25,"1/15/27"],
+["Ro — GLP-1 & Telehealth","Spend $125, earn $25 back",25,"11/1/26"],
+["VistaPrint","Spend $100, earn $25 back",25,"9/30/26"],
+["Rent the Runway","Spend $99, earn $25 back",25,"9/25/26"],
+["Coterie — Baby Care","Spend $115, earn $25 back",25,"10/22/26"],
+["Sam's Club","30% on a new membership",24,"11/18/26"],
+["AMC+","Spend $7.99, earn $7.99 back, up to 3x",23.97,"9/15/26"],
+["MGM+ Streaming","Spend $7.99, earn $7.99 back, up to 3x",23.97,"12/31/26"],
+["Peacock Annual","Spend $109.99, earn $20",20,"8/31/26"],
+["MUJI","Spend $100, earn $20 back",20,"10/22/26"],
+["La Colombe","20% on a single purchase",20,"8/29/26"],
+["Thrive Market","Spend $59.95, earn $20 back",20,"11/3/26"],
+["ContactsDirect.com","Spend $100, earn $20 back",20,"9/30/26"],
+["Grammarly","Spend $100, earn $20 back",20,"9/11/26"],
+["Athletic Brewing Co.","Spend $50, earn $10 back, up to 2x",20,"10/28/26"],
+["Bouqs Flower Subscription","Spend $40, earn $20 back",20,"10/15/26"],
+["Ariat International","Spend $100, earn $20 back",20,"8/29/26"],
+["Bark","Spend $20, earn $10 back, up to 2x",20,"10/2/26"],
+["MeUndies","Spend $50, earn $10 back, up to 2x",20,"9/1/26"],
+["discovery+","Spend $5.99, earn $5.99 back, up to 3x",17.97,"8/31/26"],
+["YouTube Premium","Spend $15.99, earn $8 back, up to 2x",16,"11/20/26"],
+["Calvin Klein","Spend $100, earn $15 back",15,"9/30/26"],
+["Tommy Hilfiger","Spend $75, earn $15 back",15,"8/31/26"],
+["MoMA Design Store","Spend $150, earn $15 back",15,"11/9/26"],
+["Stanley1913.com","Spend $75, earn $15 back",15,"9/30/26"],
+["Express","10% back",14,"8/31/26"],
+["Aldo","10% on a single purchase",14,"8/31/26"],
+["New York Magazine","Spend $4, earn $4 back, up to 3x",12,"11/8/26"],
+["Tender Greens","Spend $25, earn $5 back, up to 2x",10,"8/31/26"],
+["Under Armour","Spend $50, earn $10 back",10,"9/7/26"],
+["Bluebottlecoffee.com","Spend $45, earn $5 back, up to 2x",10,"9/7/26"],
+["Peacock","Spend $7.99, earn $7.99 back",7.99,"8/31/26"],
+["Shake Shack","15% on a single purchase",6,"8/26/26"],
+["Michaels","Spend $25, earn $5 back",5,"8/31/26"],
+["Chevron and Texaco — Pump & App","Spend $30, earn $5 back",5,"10/31/26"],
+["Little Caesars","15% on a single purchase",5,"8/31/26"],
+["Paper Source","Spend $35, earn $5 back",5,"9/30/26"],
+["Auntie Anne's","10% on a single purchase",4,"8/31/26"],
+["Baskin Robbins","10% on a single purchase",4,"8/31/26"],
+["Carl's Jr.","10% on a single purchase",3,"8/29/26"],
+["Travel Experiences (gyg.me/amex)","10% off tours & activities",null,"8/31/26"]];
+// U.S. Bank: [name, headline, cap, note]
+const UB=[["Thuma","$100",100,"one time · ends Aug 16"],["Cozy Earth","10%",44,"one time"],["Sam's Club","30%",36,"NEW memberships only"],
+["Disney+","15%",28.50,"new/returning subs only"],["Lululemon","10%",16,""],["CVS","10%",5,""],["Uber","10%",4.50,"one time · ends Aug 13"],
+["Shake Shack","10%",4,"one time"],["Home Chef","20%",null,"ending soon"],["Kindle Unlimited","20%",null,"ending soon"],
+["Blue Apron","15%",null,""],["La Colombe","15%",null,""],["PAKA Apparel","15%",null,""],["Zoom","15%",null,""],["Ancestry.com","15%",null,""],
+["Daily Harvest","10%",null,""],["Little Caesars","10%",null,""],["Round Table Pizza","10%",null,""],["Floor & Decor","10%",null,""],
+["Fanatics","10%",null,""],["Moen","10%",null,""],["Sephora","10%",null,"in store only"],["QVC","10%",null,""],["David's Bridal","10%",null,""],
+["Tommy John","10%",null,""],["Ariat","10%",null,"ending soon"],["Empire Today","10%",null,"ending soon"],["Gardyn","10%",null,""],
+["Eberjey","10%",null,"ending soon"],["OSEA Malibu","10%",null,"ending soon"],["Vistaprint","10%",null,""],["Salt & Stone","10%",null,""],
+["Six Flags","10%",null,""],["Intrepid Travel","10%",null,""],["Great Wolf Lodge","10%",null,""],["Holiday Inn Express","10%",null,""],
+["Gaylord Opryland","10%",null,""],["Gaylord Pacific","10%",null,""],["Safelite","10%",null,""],["Bob's Discount Furniture","$30",null,"ending soon"],
+["American Home Shield","$25",null,"ending soon"],["YouTube TV","$20",null,""],["fubo","$20",null,""],["Turo","$10",null,""],["BARK","$10",null,""],
+["Meta Glasses","$10",null,""],["Hungryroot","$10",null,""],["Weight Watchers","$10",null,""],["AARP","$8",null,""],["Paramount+","$5",null,""],
+["STARZ","$3",null,""],["MSC Cruises","7%",null,""],["On","7%",null,""],["Lids","7%",null,"in store only"],["Massage Envy","7%",null,""],
+["Auntie Anne's","5%",null,""],["NordicTrack","5%",null,""],["Aldo","5%",null,""],["Brilliant Earth","5%",null,"ending soon"],
+["Sleep Number","5%",null,""],["FragranceNet.com","5%",null,""],["SeatGeek","5%",null,""],["SeaWorld","5%",null,""],["Sesame Place","5%",null,""],
+["Busch Gardens","5%",null,""],["Cambria Hotels","5%",null,""],["Quik Stop","5%",null,"pay at pump"],["CarParts.com","5%",null,""],
+["Kohl's","3%",null,""],["Chevron","3%",null,"pay at pump · ending soon"],["eBay","2%",null,""]];
+// BofA / BankAmeriDeals — 683 offers total; the ones that overlap Amex or U.S. Bank, plus the top values
+const BA=[["Sam's Club Membership","$70 off"],["SimpliSafe","$100"],["Empire Today","$50"],["PEDAL Electric","$50"],
+["LensCrafters","$30"],["One Skin","$30"],["The Economist","$30"],["Wild Alaskan Company","$25"],["H&R Block","$25 off"],
+["LensDirect","$25"],["Turo","$20"],["Rent The Runway","$20"],["Nurture Life","$20"],["Allure Beauty Box","20%"],
+["GQ Box","20%"],["e.l.f. Cosmetics","20%"],["Paramount+","20%"],["FromYouFlowers.com","16%"],["sling.com","15%"],
+["linensandhutch.com","15%"],["Firstleaf Wine Club","15%"],["Westgate Reservations","15%"],["E-file.com","15%"],
+["LegalZoom","15% off"],["FTD.COM","12%"],["ProFlowers","12%"],["Royal Caribbean","10%"],["Vitamix","10%"],
+["Zenni Optical","10%"],["1-800-FLOWERS","10%"],["Korres","10%"],["Dr. Brandt","10%"],["Nuropod","10%"],
+["Kiehl's","9%"],["Bellroy","8%"],["Rosetta Stone","8%"],["Braun","8%"],["andieswim.com","8%"],["Under Armour","7%"],
+["Cove","7.5%"],["John Hardy","7.5%"],["COSORI","7.5%"],["Case-Mate","7.5%"],["Panda Express","5%"],["Meta","5%"],
+["adidas","5%"],["LG Electronics","5%"],["Great Wolf Lodge","5%"],["Tommy John","5%"],["MeUndies","5%"],
+["AliExpress","5%"],["PlushBeds","5%"],["Samsonite","6%"],["Dermstore","6%"],["Tawkify","6%"],["Annoushka","4.25%"],
+["Kohl's","4% (exclusive)"],["Sleep Number","4%"],["Eyebobs","4%"],["David's Bridal","4%"],["HSN.com","4%"],
+["Brooks Running","4%"],["TNuck","3.5%"],["VistaPrint","3.5%"],["Naturepedic","3.5%"],["Ulta Beauty","3%"],
+["Marshalls","3% (exclusive)"],["iHerb","3%"],["EltaMD","3%"],["Skechers","3%"],["Stanley 1913","2.75%"],
+["Kohl's","2.5%"],["lululemon","2.5%"],["Best Buy","2%"],["Walgreens","2%"],["Bose","2%"],["Lids","2%"],
+["Safelite","2%"],["FragranceNet","2%"],["Kohler","2%"],["ContactsDirect.com","2%"],["fahertybrand.com","2%"],
+["Moen Incorporated","1.75%"],["Thuma","1.5%"],["dyson","1.5%"],["Saatva","1.5%"],["Discount Tire","1.5%"],
+["Ashley HomeStore","1%"],["Disney+","$4.99 off"],["Wayfair","10% off"],["Teleflora","25% off"],
+["Disneyland Resort","Save Now"],["Walt Disney World","Save Now"],["Disney Cruise Line","Save Now"],
+["Hotels.com","Save Now"],["Six Flags","Save Now"],["Booking.com","Save Now"],["Regal Cinemas","Save Now"],
+["Casey's Gas","35¢/gal"]];
+// head-to-head across all three: [merchant, amex, usbank, bofa, winner]
+const CONF=[["Sam's Club membership","30%, up to $24","30%, up to $36","$70 off","BOA"],
+["Paramount+","$41.97 (3× $13.99)","$5","20%","AMEX"],
+["Fubo","$90 (3× $30)","$20","—","AMEX"],
+["Teleflora","$100 (10× $10)","—","25% off","AMEX"],
+["Disney+","$84/yr credit","15%, up to $28.50","$4.99 off","AMEX"],
+["Wild Alaskan","$60 (2× $30)","—","$25","AMEX"],
+["LensCrafters","$40 on $225","—","$30","AMEX"],
+["Turo","$30 on $150","$10","$20","AMEX"],
+["Lids","$30 (2× $15)","7%","2%","AMEX"],
+["Rent the Runway","$25 on $99","—","$20","AMEX"],
+["VistaPrint","$25 on $100","10%","3.5%","AMEX"],
+["Ancestry","20%, up to $100","15%","—","AMEX"],
+["Ariat","$20 on $100","10%","—","AMEX"],
+["Bark","$20 (2× $10)","$10","—","AMEX"],
+["La Colombe","20%, up to $20","15%","—","AMEX"],
+["Stanley","$15 on $75","—","2.75%","AMEX"],
+["Aldo","10%, up to $14","5%","—","AMEX"],
+["iHerb","4%, up to $250","—","3%","AMEX"],
+["Shake Shack","15%, up to $6","10%, up to $4","—","AMEX"],
+["Little Caesars","15%, up to $5","10%","—","AMEX"],
+["Auntie Anne's","10%, up to $4","5%","—","AMEX"],
+["Chevron","$5 on $30","3%","—","AMEX"],
+["Quik Stop","5%, up to $40","5%","—","AMEX"],
+["Thuma","—","$100","1.5%","GO"],
+["Lululemon","—","10%, up to $16","2.5%","GO"],
+["Safelite","—","10%","2%","GO"],
+["Moen","—","10%","1.75%","GO"],
+["Tommy John","—","10%","5%","GO"],
+["Great Wolf Lodge","—","10%","5%","GO"],
+["Six Flags","—","10%","Save Now","GO"],
+["David's Bridal","—","10%","4%","GO"],
+["Sleep Number","—","5%","4%","GO"],
+["FragranceNet","—","5%","2%","GO"],
+["Kohl's","—","3%","4% exclusive","BOA"],
+["Empire Today","—","10%","$50","BOA"],
+["Under Armour","$10 on $50","—","7%","SPLIT"]];
+const el=i=>document.getElementById(i), esc=s=>String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const norm=s=>s.toLowerCase().replace(/[^a-z0-9]/g,'');
+function ruleCard(i,ax,ub,ba){
+ const R=RULES[i],C=CARD[R.card];
+ let h=`<div class="card"><div class="verdict"><span class="big ${C.cls}">${C.label}</span>
+  <span class="rate ${C.cls}">${R.rate}</span><span class="tag">${esc(R.cat)}</span></div>`;
+ if(R.why)h+=`<div class="why">${esc(R.why)}</div>`;
+ ax.forEach(o=>h+=`<div class="deal a"><b class="AMEX">Amex Offer — ${esc(o[0])}</b><br>${esc(o[1])}${o[2]?` · up to <b>$${o[2].toFixed(2)}</b>`:""} · expires ${esc(o[3])}<br><span class="cap">✓ Already on your card — just pay with the Amex.</span></div>`);
+ ub.forEach(o=>h+=`<div class="deal g"><b class="GO">U.S. Bank deal — ${esc(o[0])}</b><br>${esc(o[1])} back${o[2]?` · up to <b>$${o[2].toFixed(2)}</b>`:""}${o[3]?" · "+esc(o[3]):""}<br><span class="cap">⚠ NOT activated. Open the U.S. Bank app and tap ⊕ <b>before</b> you pay — no retroactive credit.</span></div>`);
+ ba.forEach(o=>h+=`<div class="deal b"><b class="BOA">BankAmeriDeal — ${esc(o[0])}</b><br>${esc(o[1])}<br><span class="cap">⚠ NOT activated. If it's an online offer you must also <b>start from the BofA deals page</b> or it won't track.</span></div>`);
+ if(ax.length&&ub.length)h+=`<div class="note"><b>Both cards have this merchant.</b> Only the card you swipe earns — take the bigger number above.</div>`;
+ return h+`</div>`;
+}
+function search(){
+ const raw=el('q').value.trim(), v=norm(raw);
+ if(!raw){el('search').innerHTML=`<div class="none">Type a merchant to see which card to swipe.<br><br>
+  Try <kbd>shake shack</kbd> <kbd>paramount</kbd> <kbd>costco</kbd> <kbd>cvs</kbd></div>`;return;}
+ const ax=AX.filter(o=>norm(o[0]).includes(v)), ub=UB.filter(o=>norm(o[0]).includes(v)), ba=BA.filter(o=>norm(o[0]).includes(v));
+ let idx=null;for(const k in M){if(norm(k).includes(v)||v.includes(norm(k))){idx=M[k];break;}}
+ if(idx===null)idx=12;
+ let out=ruleCard(idx,ax,ub,ba);
+ if(!ax.length&&!ub.length&&!ba.length)out+=`<div class="note">No offer found for “${esc(raw)}” on any of the three programs — the answer above is the plain category rate. If it's plainly online, use the Amex: guessing online is nearly free.</div>`;
+ el('search').innerHTML=out;
+}
+function renderConflict(){
+ const LBL={AMEX:"Amex",GO:"Altitude Go",BOA:"BofA",SPLIT:"depends"};
+ el('conflict').innerHTML=`<div class="card">`+CONF.map(c=>{
+  const w=c[4];
+  return `<div class="row"><div><span class="m">${esc(c[0])}</span>
+   <div class="cap" style="margin-top:3px">Amex ${esc(c[1])} &nbsp;·&nbsp; U.S. Bank ${esc(c[2])} &nbsp;·&nbsp; BofA ${esc(c[3])}</div></div>
+   <div class="r ${w==='SPLIT'?'':w} win">${LBL[w]}</div></div>`;}).join("")+`</div>
+ <div class="note"><b>36 merchants appear on two or three programs.</b> Amex takes 23, Altitude Go 10, BofA 2,
+ and one depends on basket size.<br><br>
+ <b>Sam's Club flipped.</b> I previously called this for U.S. Bank on cap size — BofA's <b>$70 off a new
+ membership</b> beats both U.S. Bank's $36 back and Amex's $24. That's now the single best Sam's Club play.<br><br>
+ <b>Under Armour depends on spend:</b> Amex pays a flat $10 on $50+, BofA pays 7%. Crossover is about $143 —
+ below that take the Amex, above it take the BofA.<br><br>
+ The working rule: <b>Amex Offers first, then U.S. Bank, then BofA</b> — except for the eleven merchants above
+ where that order loses.</div>`;
+}
+function renderRules(){
+ el('rules').innerHTML=`<div class="card">`+RULES.map(R=>{const C=CARD[R.card];
+  return `<div class="row"><div><span class="m">${esc(R.cat)}</span>${R.why?`<div class="cap" style="margin-top:3px">${esc(R.why)}</div>`:""}</div>
+  <div class="r ${C.cls}">${C.label}<br><span style="font-size:15px">${R.rate}</span></div></div>`;}).join("")+`</div>
+ <div class="note"><b>Caps that bite.</b> BofA’s 3% and 2% draw from ONE $2,500/quarter pool, then everything drops to the base rate. Amex’s 3% categories are capped at $6,000 of spend per calendar year each. Altitude Go’s 4% dining is capped at $2,000/quarter and drops to 1X past it.<br><br><b>Why a purchase lands in the wrong category</b>, in BofA’s words: &ldquo;Merchants, not Bank of America, categorize and submit purchases, so some purchases may not fall into the category where you might expect.&rdquo; It’s the merchant’s MCC — you can’t know in advance, you verify after the fact.</div>`;
+}
+function listRender(id,arr,fmt,foot){el(id).innerHTML=`<div class="card">`+arr.map(fmt).join("")+`</div>`+(foot||"");}
+function renderAmex(){
+ listRender('amex',AX,o=>`<div class="row"><div><span class="m">${esc(o[0])}</span>
+  <div class="cap" style="margin-top:3px">${esc(o[1])} · expires ${esc(o[3])}</div></div>
+  <div class="r AMEX">${o[2]?"$"+o[2].toFixed(2):"—"}</div></div>`,
+ `<div class="note">Sorted by maximum value. Amex Offers must be added to the card <b>before</b> you spend — there is no retroactive credit. They’re allocated and vanish once enough cardholders claim them, so add on sight.</div>`);
+}
+function renderUsb(){
+ listRender('usb',UB,o=>`<div class="row"><div><span class="m">${esc(o[0])}</span>
+  <div class="cap" style="margin-top:3px">${o[2]?"max $"+o[2].toFixed(2):"cap not read"}${o[3]?" · "+esc(o[3]):""}</div></div>
+  <div class="r" style="color:var(--warn)">${esc(o[1])}</div></div>`,
+ `<div class="note">All credit only to a U.S. Bank card — for you, the Altitude Go. Caps shown where I read the
+ offer detail before the session timed out; the rest run $4–$40.<br><br>
+ Every deal here credits only to the Altitude Go.</div>`);
+}
+function renderBoa(){
+ listRender('boa',BA,o=>`<div class="row"><span class="m">${esc(o[0])}</span>
+  <div class="r BOA">${esc(o[1])}</div></div>`,
+ `<div class="note"><b>683 offers total</b> — this is a merchant catalogue, not a short targeted list like the other two.
+ Shown here are the 42 that overlap Amex or U.S. Bank plus the highest-value rest; search covers what's listed.
+ Paid cash back this year: <b>$0.00</b>.<br><br>
+ <b>Two different mechanics live in this list.</b> "% cash back" pays to the card. "Save $X" / "Save Now" is a
+ discount at checkout, usually via a tracked link — you must start from the BofA deals page or it won't track.
+ Most percentage offers are online-only for the same reason.</div>`);
+}
+function renderTodo(){
+ const T=[["Amex — add offers on sight","Amex","Allocated and limited-quantity. They disappear once enough cardholders claim them, and there is no retroactive credit."],
+ ["U.S. Bank — activate on demand","Altitude Go","Fixed expiry dates, not limited supply. Search the merchant here, then tap the plus in the U.S. Bank app before you pay."],
+ ["BofA — activate, and start from their page","BofA","Online offers only track if the purchase begins on the BofA deals page. Activating alone is not enough for those."],
+ ["Dining always goes to the Altitude Go","Altitude Go","4% including delivery, until $2,000/quarter."],
+ ["Warehouse clubs always go to BofA","BofA","Amex is excluded at clubs, and US Costco takes Visa only."],
+ ["Car rental goes on the Amex anyway","Amex","Reserve and pay in full on it, decline the counter CDW, and you get loss/damage cover — worth more than the rate you give up."]];
+ listRender('todo',T,t=>`<div class="row"><div><span class="m">${esc(t[0])}</span>
+  <div class="cap" style="margin-top:3px">${esc(t[2])}</div></div><div class="r cap">${esc(t[1])}</div></div>`,
+ `<div class="note">Offer credit only ever pays on the card whose program owns it — there is no cross-crediting between issuers. When the same merchant appears twice, only the card you actually swipe earns.</div>`);
+}
+el('q').addEventListener('input',search);
+document.querySelectorAll('.tab').forEach(t=>{t.onclick=()=>{
+ document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));t.classList.add('on');
+ ['search','conflict','rules','amex','usb','boa','todo'].forEach(v=>el(v).classList.add('hide'));
+ el(t.dataset.v).classList.remove('hide');};});
+search();renderConflict();renderRules();renderAmex();renderUsb();renderBoa();renderTodo();
+</script>
+</body>
+</html>
