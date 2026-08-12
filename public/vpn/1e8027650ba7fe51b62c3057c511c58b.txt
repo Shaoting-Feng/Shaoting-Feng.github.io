@@ -1,1 +1,2 @@
 vless://389e1c54-5bc2-4cd8-bce1-0b5c4ec73a98@50.35.188.28:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=gateway.icloud.com&fp=chrome&pbk=ZF4r4p4DB2IVo5UDZHeT3_57rqL3LzeKto64FS5hRWA&sid=06622cde2cb66901&type=tcp&headerType=none#MyVPN-Direct
+vless://389e1c54-5bc2-4cd8-bce1-0b5c4ec73a98@adrian-ads-affordable-headphones.trycloudflare.com:443?encryption=none&security=tls&sni=adrian-ads-affordable-headphones.trycloudflare.com&fp=chrome&type=ws&host=adrian-ads-affordable-headphones.trycloudflare.com&path=%2Fray#MyVPN-CF
