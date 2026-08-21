@@ -1,0 +1,2 @@
+# keep this dir so deploy-vpn.yml "cp -r public/vpn" succeeds.
+# NO subscription file here: the public sub was the 2026-08-21 leak vector.
